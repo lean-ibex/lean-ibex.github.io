@@ -1,2 +1,2 @@
 # lean-ibex.github.io
-Org site
+Live hosting location for site: www2.logmein.com
