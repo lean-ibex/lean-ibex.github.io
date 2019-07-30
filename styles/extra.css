@@ -1,0 +1,24 @@
+.recomendation .recomendation-item {
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.08)}
+
+.option {
+    background: transparent;
+    box-shadow: none;}
+
+.secondary-cta {
+    border-bottom: 1px solid #53565a;}
+
+@media only screen and (min-width: 641px)
+.usecase .usecase_information img.img-hero {
+    width: 92%; margin: 4%;}
+
+.usecase .usecase-tabs li{
+    font-weight: 700;
+    color: #53565A;
+    font-size: 14px;}
+
+.recomendation .usecase .recomendation-solution, .usecase .container, .usecase .description, .usecase .footer__menu, .usecase .footer__socmed, .usecase .recomendation .recomendation-solution{
+    padding-top: 50px;
+    padding-bottom: 10px;}
