@@ -1,5 +1,29 @@
 document.addEventListener('DOMContentLoaded', slackEventNotification)
 document.addEventListener('DOMContentLoaded', resetStorage)
+document.addEventListener('DOMContentLoaded', logHit)
+document.addEventListener('DOMContentLoaded', outboundClicks)
+
+function outboundClicks() {
+    let outboundLinks = document.querySelectorAll('a')
+    Object.keys(outboundLinks).map(key=>{
+        outboundLinks[key].removeEventListener('click', outboundClick)
+        outboundLinks[key].addEventListener('click', outboundClick.bind(outboundLinks[key]))
+    })
+    // outboundLinks.map(link=>{
+    //     link.removeEventListener('click', outboundClick)
+    //     link.addEventListener('click', outboundClick.bind(link))
+    // })
+}
+
+function outboundClick() {
+    let label = this.className.replace(' ', '.') + '_' + this.innerText
+    gtag('event','click',{event_category: 'outbound-link', event_label: label, value: 1})
+}
+
+
+function logHit() {
+    fetch('https://us-central1-bundleit-02210.cloudfunctions.net/api/logHit')
+}
 
 function resetStorage() {
   localStorage.clear()

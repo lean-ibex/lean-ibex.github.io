@@ -1647,11 +1647,32 @@ img {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column
+  flex-direction: column;
+  vertical-align: bottom
 }
 
 .recomendation .summary .container, .recomendation .summary .description, .recomendation .summary .footer__menu, .recomendation .summary .footer__socmed, .recomendation .summary .recomendation-solution {
   padding: 1rem 36px
+}
+
+.recomendation .summary .summary__price.discount {
+  text-decoration: line-through;
+  color: hsla(0, 0%, 100%, .2)
+}
+
+.recomendation .summary .summary__discount {
+  display: none
+}
+
+.recomendation .summary .summary__discount.discount {
+  display: inline
+}
+
+.recomendation .summary .summary__discount .percent {
+  margin-left: 1rem;
+  vertical-align: bottom;
+  font-size: 14px;
+  color: #93c90e
 }
 
 @media only screen and (min-width:641px) {
@@ -2455,7 +2476,7 @@ img {
 }
 
 #build-bundle .send-recomendation-button {
-  width: 186px;
+  width: 226px;
   height: 32px;
   margin: 0 auto;
   border: 2px solid #c8c7c6;
