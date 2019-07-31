@@ -838,6 +838,10 @@ img {
   color: #fff
 }
 
+#build-bundle .navigation .menu a.contact-us:hover, .navigation .menu #build-bundle a.contact-us:hover, .navigation .menu .recomendation a.recomendation__button:hover, .navigation .menu a.button:hover, .recomendation .navigation .menu a.recomendation__button:hover {
+  background-color: #76a624
+}
+
 .navigation__child--opened .menu .menu__child.menu__child--opened {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -861,7 +865,7 @@ img {
     height: 320px;
     width: 700px;
     left: auto;
-    padding: 1rem;
+    padding-bottom: 0;
     border: 1px solid #97999b;
     z-index: 1;
     border-radius: .25rem;
@@ -889,7 +893,9 @@ img {
 @media only screen and (min-width:641px) {
   .navigation__child--opened .menu .menu__child.menu__child--opened li {
     margin-bottom: 10px;
-    margin-right: 30px
+    margin-right: 30px;
+    line-height: 14px;
+    padding-bottom: 10px
   }
 }
 
@@ -1046,7 +1052,7 @@ img {
 @media only screen and (min-width:641px) {
   .description .products-example {
     max-width: 960px;
-    margin: 2rem auto;
+    margin: 2rem auto 0;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap
   }
@@ -1445,7 +1451,7 @@ img {
 
 @media only screen and (min-width:641px) {
   .solution .solution__options {
-    max-width: 880px;
+    max-width: 92%;
     margin: 2rem auto 0
   }
 }
@@ -1462,7 +1468,7 @@ img {
 @media only screen and (min-width:641px) {
   .solution .solution__options h5 {
     display: inline-block;
-    margin-right: 1rem
+    margin: 5px 0 0
   }
 }
 
@@ -1487,7 +1493,7 @@ img {
   margin-bottom: .5rem;
   border: 2px solid #0f4760;
   background-color: #0f4760;
-  padding: .25rem 1rem;
+  padding: .5rem 2rem;
   border-radius: 1.5rem;
   white-space: nowrap;
   cursor: pointer
@@ -2136,7 +2142,8 @@ img {
   font-family: Lato;
   font-style: normal;
   font-stretch: normal;
-  letter-spacing: normal
+  letter-spacing: normal;
+  margin-bottom: 20px
 }
 
 .recomendation .products-empty-h2 {
@@ -2155,7 +2162,7 @@ img {
 }
 
 .secondary-cta h2 {
-  margin: 0 25% 30px
+  margin: 0 10% 30px
 }
 
 .secondary-cta p {
@@ -2218,6 +2225,10 @@ img {
   -webkit-box-direction: normal;
   -webkit-box-flex: 0;
   -webkit-box-pack: center
+}
+
+#build-bundle .secondary-cta .cta>.contact-us:hover, .recomendation .secondary-cta .cta>.recomendation__button:hover, .secondary-cta #build-bundle .cta>.contact-us:hover, .secondary-cta .cta>.button.button:hover, .secondary-cta .recomendation .cta>.recomendation__button:hover {
+  background-color: #76a624
 }
 
 .footer {

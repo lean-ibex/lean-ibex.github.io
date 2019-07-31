@@ -555,24 +555,24 @@ function Http() {
     var m = n(28),
       h = n(29),
       v = n(30),
-      y = "prototype",
-      g = function(e, t, n) {
-        var a, r, o, i = e & g.F,
-          s = e & g.G,
-          l = e & g.S,
-          c = e & g.P,
-          u = e & g.B,
-          d = e & g.W,
+      g = "prototype",
+      y = function(e, t, n) {
+        var a, r, o, i = e & y.F,
+          s = e & y.G,
+          l = e & y.S,
+          c = e & y.P,
+          u = e & y.B,
+          d = e & y.W,
           p = s ? h : h[t] || (h[t] = {}),
-          f = s ? m : l ? m[t] : (m[t] || {})[y];
+          f = s ? m : l ? m[t] : (m[t] || {})[g];
         for (a in s && (n = t), n)(r = !i && f && a in f) && a in p || (o = r ? f[a] : n[a], p[a] = s && "function" != typeof f[a] ? n[a] : u && r ? v(o, m) : d && f[a] == o ? function(t) {
           var e = function(e) {
             return this instanceof t ? new t(e) : t(e)
           };
-          return e[y] = t[y], e
-        }(o) : c && "function" == typeof o ? v(Function.call, o) : o, c && ((p[y] || (p[y] = {}))[a] = o))
+          return e[g] = t[g], e
+        }(o) : c && "function" == typeof o ? v(Function.call, o) : o, c && ((p[g] || (p[g] = {}))[a] = o))
       };
-    g.F = 1, g.G = 2, g.S = 4, g.P = 8, g.B = 16, g.W = 32, e.exports = g
+    y.F = 1, y.G = 2, y.S = 4, y.P = 8, y.B = 16, y.W = 32, e.exports = y
   }, function(e, t) {
     var n = e.exports = "undefined" != typeof window && window.Math == Math ? window : "undefined" != typeof self && self.Math == Math ? self : Function("return this")();
     "number" == typeof __g && (__g = n)
@@ -677,9 +677,9 @@ function Http() {
           m = e.disableFocus,
           h = void 0 !== m && m,
           v = e.awaitCloseAnimation,
-          y = void 0 !== v && v,
-          g = e.debugMode,
-          b = void 0 !== g && g;
+          g = void 0 !== v && v,
+          y = e.debugMode,
+          b = void 0 !== y && y;
         (function(e, t) {
           if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
         })(this, _), this.modal = document.getElementById(t), this.config = {
@@ -689,7 +689,7 @@ function Http() {
           closeTrigger: d,
           onShow: o,
           onClose: s,
-          awaitCloseAnimation: y,
+          awaitCloseAnimation: g,
           disableFocus: h
         }, 0 < a.length && this.registerTriggers.apply(this, k(a)), this.onClick = this.onClick.bind(this), this.onKeydown = this.onKeydown.bind(this)
       }
@@ -1763,14 +1763,13 @@ function segmentItemClicked() {
   document.querySelector(".segment a.selected").classList.remove("selected"), this.classList.contains("selected") || this.classList.add("selected")
 }
 
-function setEventOption(e) {
+function setEventSegmentOption(e) {
   var t = !0,
     n = !1,
     a = void 0;
   try {
     for (var r, o = e[Symbol.iterator](); !(t = (r = o.next()).done); t = !0) {
-      var i = r.value;
-      setClickEventOption(i)
+      setClickEventSegmentOption(r.value)
     }
   } catch (e) {
     n = !0, a = e
@@ -1783,14 +1782,13 @@ function setEventOption(e) {
   }
 }
 
-function setEventOptionList(e) {
+function setEventSegmentOptionList(e) {
   var t = !0,
     n = !1,
     a = void 0;
   try {
     for (var r, o = e[Symbol.iterator](); !(t = (r = o.next()).done); t = !0) {
-      var i = r.value;
-      setClickEventOptionList(i)
+      setClickEventSegmentOptionList(r.value)
     }
   } catch (e) {
     n = !0, a = e
@@ -1803,20 +1801,19 @@ function setEventOptionList(e) {
   }
 }
 
-function setClickEventOption(e) {
-  var t = e.querySelectorAll(".option-list a");
-  setEventOptionList(t), e.removeEventListener("click", optionClicked), e.addEventListener("click", optionClicked.bind(e))
+function setClickEventSegmentOption(e) {
+  setEventSegmentOptionList(e.querySelectorAll(".option-list a")), e.removeEventListener("click", segmentOptionClicked), e.addEventListener("click", segmentOptionClicked.bind(e))
 }
 
-function setClickEventOptionList(e) {
-  e.removeEventListener("click", optionValueClicked), e.addEventListener("click", optionValueClicked.bind(e))
+function setClickEventSegmentOptionList(e) {
+  e.removeEventListener("click", segmentOptionValueClicked), e.addEventListener("click", segmentOptionValueClicked.bind(e))
 }
 
-function optionClicked() {
+function segmentOptionClicked() {
   this.classList.toggle("option--active")
 }
 
-function optionValueClicked() {
+function segmentOptionValueClicked() {
   var e = this.closest(".business__type.option"),
     t = e.querySelector(".option__value"),
     n = e.querySelector("input");
@@ -1829,8 +1826,7 @@ function setEventOption(e) {
     a = void 0;
   try {
     for (var r, o = e[Symbol.iterator](); !(t = (r = o.next()).done); t = !0) {
-      var i = r.value;
-      setClickEventOption(i)
+      setClickEventOption(r.value)
     }
   } catch (e) {
     n = !0, a = e
@@ -1849,8 +1845,7 @@ function setEventOptionList(e) {
     a = void 0;
   try {
     for (var r, o = e[Symbol.iterator](); !(t = (r = o.next()).done); t = !0) {
-      var i = r.value;
-      setClickEventOptionList(i)
+      setClickEventOptionList(r.value)
     }
   } catch (e) {
     n = !0, a = e
@@ -1864,8 +1859,7 @@ function setEventOptionList(e) {
 }
 
 function setClickEventOption(e) {
-  var t = e.querySelectorAll(".option-list a");
-  setEventOptionList(t), e.removeEventListener("click", optionClicked), e.addEventListener("click", optionClicked.bind(e))
+  setEventOptionList(e.querySelectorAll(".option-list a")), e.removeEventListener("click", optionClicked), e.addEventListener("click", optionClicked.bind(e))
 }
 
 function setClickEventOptionList(e) {
@@ -2014,16 +2008,7 @@ function() {
       }
       var s
     }(a)
-}(),
-function() {
-  setEventSegmentItem(document.querySelectorAll(".segment a"));
-  var e = document.querySelectorAll(".business__type.option");
-  setEventOption(e)
-}(),
-function() {
-  var e = document.querySelectorAll(".subscription__type.option");
-  setEventOption(e)
-}();
+}(), setEventSegmentItem(document.querySelectorAll(".segment a")), setEventSegmentOption(document.querySelectorAll(".business__type.option")), setEventOption(document.querySelectorAll(".subscription__type.option"));
 var selectedPiles = [],
   selectedProducts = [],
   selectedAddons = [];
@@ -2263,20 +2248,21 @@ function bannerCtaClicked() {
       s = i.querySelector(".recomendation .recomendation__button");
     i.classList.add("summary--show"), s.classList.remove("recomendation__button--disabled")
   }(n = a).removeEventListener("change", i), n.addEventListener("change", i.bind(n)), document.querySelector("div.inbundle__content").addEventListener("click", function(e) {
-    if ("close" === e.target.className) {
-      var t = document.querySelector(".recomendation .summary .summary__price strong"),
-        n = e.target.parentNode.querySelector("span.name").innerText,
-        a = "product-tag" === e.target.parentNode.className ? "product" : "addon";
+    if ("LI" === e.target.parentNode.tagName || "LI" === e.target.tagName) {
+      var t = "LI" === e.target.parentNode.tagName ? e.target.parentNode : e.target,
+        n = document.querySelector(".recomendation .summary .summary__price strong"),
+        a = t.querySelector("span.name").innerText,
+        r = "product-tag" === t.className ? "product" : "addon";
       gtag("event", "click", {
         event_category: "remove-from-bundle",
-        event_label: n,
+        event_label: a,
         value: 1
-      }), "product" === a ? (selectedProducts = selectedProducts.filter(function(e) {
-        return e !== n
-      }), localStorage.setItem("selectedProducts", selectedProducts)) : "addon" === a && (selectedAddons = selectedAddons.filter(function(e) {
-        return e !== n
-      }), localStorage.setItem("selectedAddons", selectedAddons)), l() ? t.innerText = c("monthly").toFixed(2) : t.innerText = c("annually").toFixed(2);
-      var r = logMeIn.templates.inbundle({
+      }), "product" === r ? (selectedProducts = selectedProducts.filter(function(e) {
+        return e !== a
+      }), localStorage.setItem("selectedProducts", selectedProducts)) : "addon" === r && (selectedAddons = selectedAddons.filter(function(e) {
+        return e !== a
+      }), localStorage.setItem("selectedAddons", selectedAddons)), l() ? n.innerText = c("monthly").toFixed(2) : n.innerText = c("annually").toFixed(2);
+      var o = logMeIn.templates.inbundle({
           products: selectedProducts.map(function(e) {
             return knownProducts[e]
           }),
@@ -2284,8 +2270,8 @@ function bannerCtaClicked() {
             return knownAddons[e]
           })
         }),
-        o = document.querySelector(".inbundle__content");
-      o.innerHTML = r, d(), p()
+        i = document.querySelector(".inbundle__content");
+      i.innerHTML = o, d(), p()
     }
   })
 }(), document.querySelector(".recomendation .close-button").addEventListener("click", function() {
@@ -2301,11 +2287,6 @@ function bannerCtaClicked() {
   })
 }), window.addEventListener("scroll", function() {
   document.querySelector(".navigation").scrollHeight;
-  var e = document.querySelector(".hero").scrollHeight,
-    t = document.querySelector(".usecase").scrollHeight,
-    n = (document.querySelector(".description").scrollHeight, document.querySelector(".solution").scrollHeight),
-    a = document.querySelector(".recomendation").scrollHeight,
-    r = document.querySelector(".recomendation .summary"),
-    o = e + t + n + a - window.innerHeight;
-  window.scrollY > o ? r.classList.add("summary--scrolled") : r.classList.remove("summary--scrolled")
+  document.querySelector(".hero").scrollHeight, document.querySelector(".usecase").scrollHeight, document.querySelector(".description").scrollHeight, document.querySelector(".solution").scrollHeight, document.querySelector(".recomendation").scrollHeight;
+  document.querySelector(".recomendation .summary"), window.innerHeight
 }), setEventUsecaseItem(document.querySelectorAll("li.usecase-tab")), setEventBannerCta(document.querySelector(".banner-cta a"));
