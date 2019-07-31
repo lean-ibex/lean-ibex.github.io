@@ -897,6 +897,11 @@ img {
     line-height: 14px;
     padding-bottom: 10px
   }
+
+  .navigation__child--opened .menu .menu__child.menu__child--opened li .smaller {
+    height: 18px;
+    margin-top: 10px
+  }
 }
 
 .navigation__child--opened .container>div .icon-close, .navigation__child--opened .description>div .icon-close, .navigation__child--opened .footer__menu>div .icon-close, .navigation__child--opened .footer__socmed>div .icon-close, .navigation__child--opened .recomendation .recomendation-solution>div .icon-close, .recomendation .navigation__child--opened .recomendation-solution>div .icon-close {
@@ -1814,20 +1819,11 @@ img {
 
 .recomendation .container, .recomendation .description, .recomendation .footer__menu, .recomendation .footer__socmed, .recomendation .recomendation-solution {
   padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column
+  padding-bottom: 2.5rem
 }
 
-.recomendation__header {
+.recomendation .container, .recomendation .description, .recomendation .footer__menu, .recomendation .footer__socmed, .recomendation .recomendation-solution, .recomendation__header {
   position: relative;
-  margin-bottom: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

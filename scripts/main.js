@@ -1176,7 +1176,7 @@ function Http() {
         u = n.helperMissing,
         d = "function",
         p = n.blockHelperMissing,
-        f = '<ul class="recomendation-solution recomendation-primary">\n';
+        f = '<h4>Recommendations:</h4>\n<ul class="recomendation-solution recomendation-primary">\n';
       return s = null != (s = n.productsEmpty || (null != t ? t.productsEmpty : t)) ? s : u, l = {
         name: "productsEmpty",
         hash: {},
@@ -2278,7 +2278,7 @@ function bannerCtaClicked() {
   var e = document.querySelector(".recomendation"),
     t = document.querySelector(".summary"),
     n = document.querySelectorAll(".solution li.active");
-  e.classList.remove("recomendation--open"), t.classList.remove("summary--show"), Object.keys(n).map(function(e) {
+  e.classList.remove("recomendation--open"), t.classList.remove("summary--show"), localStorage.clear(), Object.keys(n).map(function(e) {
     n[e].classList.remove("active")
   }), gtag("event", "click", {
     event_category: "close-recommendations",
