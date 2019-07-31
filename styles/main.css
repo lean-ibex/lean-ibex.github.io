@@ -1384,7 +1384,10 @@ img {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-    margin: 50px 0
+    margin: 50px 0;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
   }
 
   .usecase .usecase_information div.row .item {
@@ -1468,7 +1471,7 @@ img {
 @media only screen and (min-width:641px) {
   .solution .solution__options h5 {
     display: inline-block;
-    margin: 5px 0 0
+    margin: 5px 2rem 0 0
   }
 }
 
