@@ -30,16 +30,16 @@ function Http() {
     "use strict";
 
     function a() {
-      var t = new i.HandlebarsEnvironment;
-      return c.extend(t, i), t.SafeString = s.default, t.Exception = l.default, t.Utils = c, t.escapeExpression = c.escapeExpression, t.VM = u, t.template = function(e) {
+      var t = new s.HandlebarsEnvironment;
+      return c.extend(t, s), t.SafeString = i.default, t.Exception = l.default, t.Utils = c, t.escapeExpression = c.escapeExpression, t.VM = u, t.template = function(e) {
         return u.template(e, t)
       }, t
     }
     var r = n(1).default,
       o = n(2).default;
     t.__esModule = !0;
-    var i = r(n(3)),
-      s = o(n(20)),
+    var s = r(n(3)),
+      i = o(n(20)),
       l = o(n(5)),
       c = r(n(4)),
       u = r(n(21)),
@@ -66,13 +66,13 @@ function Http() {
     "use strict";
 
     function a(e, t, n) {
-      this.helpers = e || {}, this.partials = t || {}, this.decorators = n || {}, s.registerDefaultHelpers(this), l.registerDefaultDecorators(this)
+      this.helpers = e || {}, this.partials = t || {}, this.decorators = n || {}, i.registerDefaultHelpers(this), l.registerDefaultDecorators(this)
     }
     var r = n(2).default;
     t.__esModule = !0, t.HandlebarsEnvironment = a;
     var o = n(4),
-      i = r(n(5)),
-      s = n(9),
+      s = r(n(5)),
+      i = n(9),
       l = n(17),
       c = r(n(19));
     t.VERSION = "4.1.2";
@@ -93,7 +93,7 @@ function Http() {
       log: c.default.log,
       registerHelper: function(e, t) {
         if (o.toString.call(e) === u) {
-          if (t) throw new i.default("Arg not supported with multiple helpers");
+          if (t) throw new s.default("Arg not supported with multiple helpers");
           o.extend(this.helpers, e)
         } else this.helpers[e] = t
       },
@@ -103,7 +103,7 @@ function Http() {
       registerPartial: function(e, t) {
         if (o.toString.call(e) === u) o.extend(this.partials, e);
         else {
-          if (void 0 === t) throw new i.default('Attempting to register a partial called "' + e + '" as undefined');
+          if (void 0 === t) throw new s.default('Attempting to register a partial called "' + e + '" as undefined');
           this.partials[e] = t
         }
       },
@@ -112,7 +112,7 @@ function Http() {
       },
       registerDecorator: function(e, t) {
         if (o.toString.call(e) === u) {
-          if (t) throw new i.default("Arg not supported with multiple decorators");
+          if (t) throw new s.default("Arg not supported with multiple decorators");
           o.extend(this.decorators, e)
         } else this.decorators[e] = t
       },
@@ -145,7 +145,7 @@ function Http() {
         if (!e) return e + "";
         e = "" + e
       }
-      return i.test(e) ? e.replace(o, n) : e
+      return s.test(e) ? e.replace(o, n) : e
     }, t.isEmpty = function(e) {
       return !e && 0 !== e || !(!c(e) || 0 !== e.length)
     }, t.createFrame = function(e) {
@@ -166,29 +166,29 @@ function Http() {
         "=": "&#x3D;"
       },
       o = /[&<>"'`=]/g,
-      i = /[&<>"'`=]/,
-      s = Object.prototype.toString;
-    t.toString = s;
+      s = /[&<>"'`=]/,
+      i = Object.prototype.toString;
+    t.toString = i;
     var l = function(e) {
       return "function" == typeof e
     };
     l(/x/) && (t.isFunction = l = function(e) {
-      return "function" == typeof e && "[object Function]" === s.call(e)
+      return "function" == typeof e && "[object Function]" === i.call(e)
     }), t.isFunction = l;
     var c = Array.isArray || function(e) {
-      return !(!e || "object" != typeof e) && "[object Array]" === s.call(e)
+      return !(!e || "object" != typeof e) && "[object Array]" === i.call(e)
     };
     t.isArray = c
   }, function(e, t, n) {
     "use strict";
 
-    function s(e, t) {
+    function i(e, t) {
       var n = t && t.loc,
         a = void 0,
         r = void 0;
       n && (e += " - " + (a = n.start.line) + ":" + (r = n.start.column));
-      for (var o = Error.prototype.constructor.call(this, e), i = 0; i < c.length; i++) this[c[i]] = o[c[i]];
-      Error.captureStackTrace && Error.captureStackTrace(this, s);
+      for (var o = Error.prototype.constructor.call(this, e), s = 0; s < c.length; s++) this[c[s]] = o[c[s]];
+      Error.captureStackTrace && Error.captureStackTrace(this, i);
       try {
         n && (this.lineNumber = a, l ? Object.defineProperty(this, "column", {
           value: r,
@@ -199,7 +199,7 @@ function Http() {
     var l = n(6).default;
     t.__esModule = !0;
     var c = ["description", "fileName", "lineNumber", "message", "name", "number", "stack"];
-    s.prototype = new Error, t.default = s, e.exports = t.default
+    i.prototype = new Error, t.default = i, e.exports = t.default
   }, function(e, t, n) {
     e.exports = {
       default: n(7),
@@ -228,29 +228,29 @@ function Http() {
     "use strict";
     var a = n(2).default;
     t.__esModule = !0, t.registerDefaultHelpers = function(e) {
-      r.default(e), o.default(e), i.default(e), s.default(e), l.default(e), c.default(e), u.default(e)
+      r.default(e), o.default(e), s.default(e), i.default(e), l.default(e), c.default(e), u.default(e)
     };
     var r = a(n(10)),
       o = a(n(11)),
-      i = a(n(12)),
-      s = a(n(13)),
+      s = a(n(12)),
+      i = a(n(13)),
       l = a(n(14)),
       c = a(n(15)),
       u = a(n(16))
   }, function(e, t, n) {
     "use strict";
     t.__esModule = !0;
-    var i = n(4);
+    var s = n(4);
     t.default = function(o) {
       o.registerHelper("blockHelperMissing", function(e, t) {
         var n = t.inverse,
           a = t.fn;
         if (!0 === e) return a(this);
         if (!1 === e || null == e) return n(this);
-        if (i.isArray(e)) return 0 < e.length ? (t.ids && (t.ids = [t.name]), o.helpers.each(e, t)) : n(this);
+        if (s.isArray(e)) return 0 < e.length ? (t.ids && (t.ids = [t.name]), o.helpers.each(e, t)) : n(this);
         if (t.data && t.ids) {
-          var r = i.createFrame(t.data);
-          r.contextPath = i.appendContextPath(t.data.contextPath, t.name), t = {
+          var r = s.createFrame(t.data);
+          r.contextPath = s.appendContextPath(t.data.contextPath, t.name), t = {
             data: r
           }
         }
@@ -266,8 +266,8 @@ function Http() {
     t.default = function(e) {
       e.registerHelper("each", function(a, e) {
         function t(e, t, n) {
-          s && (s.key = e, s.index = t, s.first = 0 === t, s.last = !!n, l && (s.contextPath = l + e)), i += r(a[e], {
-            data: s,
+          i && (i.key = e, i.index = t, i.first = 0 === t, i.last = !!n, l && (i.contextPath = l + e)), s += r(a[e], {
+            data: i,
             blockParams: p.blockParams([a[e], e], [l + e, null])
           })
         }
@@ -275,17 +275,17 @@ function Http() {
         var r = e.fn,
           n = e.inverse,
           o = 0,
-          i = "",
-          s = void 0,
+          s = "",
+          i = void 0,
           l = void 0;
-        if (e.data && e.ids && (l = p.appendContextPath(e.data.contextPath, e.ids[0]) + "."), p.isFunction(a) && (a = a.call(this)), e.data && (s = p.createFrame(e.data)), a && "object" == typeof a)
+        if (e.data && e.ids && (l = p.appendContextPath(e.data.contextPath, e.ids[0]) + "."), p.isFunction(a) && (a = a.call(this)), e.data && (i = p.createFrame(e.data)), a && "object" == typeof a)
           if (p.isArray(a))
             for (var c = a.length; o < c; o++) o in a && t(o, o, o === a.length - 1);
           else {
             var u = void 0;
             for (var d in a) a.hasOwnProperty(d) && (void 0 !== u && t(u, o - 1), u = d, o++);
             void 0 !== u && t(u, o - 1, !0)
-          } return 0 === o && (i = n(this)), i
+          } return 0 === o && (s = n(this)), s
       })
     }, e.exports = t.default
   }, function(e, t, n) {
@@ -355,15 +355,15 @@ function Http() {
   }, function(e, t, n) {
     "use strict";
     t.__esModule = !0;
-    var s = n(4);
+    var i = n(4);
     t.default = function(e) {
-      e.registerDecorator("inline", function(r, o, i, e) {
+      e.registerDecorator("inline", function(r, o, s, e) {
         var t = r;
         return o.partials || (o.partials = {}, t = function(e, t) {
-          var n = i.partials;
-          i.partials = s.extend({}, n, o.partials);
+          var n = s.partials;
+          s.partials = i.extend({}, n, o.partials);
           var a = r(e, t);
-          return i.partials = n, a
+          return s.partials = n, a
         }), o.partials[e.args[0]] = e.fn, t
       })
     }, e.exports = t.default
@@ -402,23 +402,23 @@ function Http() {
   }, function(e, t, n) {
     "use strict";
 
-    function d(a, e, r, o, t, i, s) {
+    function d(a, e, r, o, t, s, i) {
       function n(e) {
         var t = arguments.length <= 1 || void 0 === arguments[1] ? {} : arguments[1],
-          n = s;
-        return !s || e == s[0] || e === a.nullContext && null === s[0] || (n = [e].concat(s)), r(a, e, a.helpers, a.partials, t.data || o, i && [t.blockParams].concat(i), n)
+          n = i;
+        return !i || e == i[0] || e === a.nullContext && null === i[0] || (n = [e].concat(i)), r(a, e, a.helpers, a.partials, t.data || o, s && [t.blockParams].concat(s), n)
       }
-      return (n = p(r, n, a, s, o, i)).program = e, n.depth = s ? s.length : 0, n.blockParams = t || 0, n
+      return (n = p(r, n, a, i, o, s)).program = e, n.depth = i ? i.length : 0, n.blockParams = t || 0, n
     }
 
-    function i() {
+    function s() {
       return ""
     }
 
     function p(e, t, n, a, r, o) {
       if (e.decorator) {
-        var i = {};
-        t = e.decorator(t, i, n, a && a[0], r, o, a), f.extend(t, i)
+        var s = {};
+        t = e.decorator(t, s, n, a && a[0], r, o, a), f.extend(t, s)
       }
       return t
     }
@@ -436,21 +436,21 @@ function Http() {
         }
         throw new m.default("Template was precompiled with a newer version of Handlebars than the current runtime. Please update your runtime to a newer version (" + e[1] + ").")
       }
-    }, t.template = function(l, s) {
+    }, t.template = function(l, i) {
       function c(e) {
         function t(e) {
-          return "" + l.main(u, e, u.helpers, u.partials, o, s, i)
+          return "" + l.main(u, e, u.helpers, u.partials, o, i, s)
         }
         var n, a, r = arguments.length <= 1 || void 0 === arguments[1] ? {} : arguments[1],
           o = r.data;
         c._setup(r), !r.partial && l.useData && (n = e, (a = o) && "root" in a || ((a = a ? h.createFrame(a) : {}).root = n), o = a);
-        var i = void 0,
-          s = l.useBlockParams ? [] : void 0;
-        return l.useDepths && (i = r.depths ? e != r.depths[0] ? [e].concat(r.depths) : r.depths : [e]), (t = p(l.main, t, u, r.depths || [], o, s))(e, r)
+        var s = void 0,
+          i = l.useBlockParams ? [] : void 0;
+        return l.useDepths && (s = r.depths ? e != r.depths[0] ? [e].concat(r.depths) : r.depths : [e]), (t = p(l.main, t, u, r.depths || [], o, i))(e, r)
       }
-      if (!s) throw new m.default("No environment passed to template");
+      if (!i) throw new m.default("No environment passed to template");
       if (!l || !l.main) throw new m.default("Unknown template object: " + typeof l);
-      l.main.decorator = l.main_d, s.VM.checkRevision(l.compiler);
+      l.main.decorator = l.main_d, i.VM.checkRevision(l.compiler);
       var u = {
         strict: function(e, t) {
           if (!(t in e)) throw new m.default('"' + t + '" not defined in ' + e);
@@ -465,11 +465,11 @@ function Http() {
         },
         escapeExpression: f.escapeExpression,
         invokePartial: function(e, t, n) {
-          n.hash && (t = f.extend({}, t, n.hash), n.ids && (n.ids[0] = !0)), e = s.VM.resolvePartial.call(this, e, t, n);
-          var a = s.VM.invokePartial.call(this, e, t, n);
-          if (null == a && s.compile && (n.partials[n.name] = s.compile(e, l.compilerOptions, s), a = n.partials[n.name](t, n)), null == a) throw new m.default("The partial " + n.name + " could not be compiled when running in runtime-only mode");
+          n.hash && (t = f.extend({}, t, n.hash), n.ids && (n.ids[0] = !0)), e = i.VM.resolvePartial.call(this, e, t, n);
+          var a = i.VM.invokePartial.call(this, e, t, n);
+          if (null == a && i.compile && (n.partials[n.name] = i.compile(e, l.compilerOptions, i), a = n.partials[n.name](t, n)), null == a) throw new m.default("The partial " + n.name + " could not be compiled when running in runtime-only mode");
           if (n.indent) {
-            for (var r = a.split("\n"), o = 0, i = r.length; o < i && (r[o] || o + 1 !== i); o++) r[o] = n.indent + r[o];
+            for (var r = a.split("\n"), o = 0, s = r.length; o < s && (r[o] || o + 1 !== s); o++) r[o] = n.indent + r[o];
             a = r.join("\n")
           }
           return a
@@ -481,8 +481,8 @@ function Http() {
         programs: [],
         program: function(e, t, n, a, r) {
           var o = this.programs[e],
-            i = this.fn(e);
-          return t || r || a || n ? o = d(this, e, i, t, n, a, r) : o || (o = this.programs[e] = d(this, e, i)), o
+            s = this.fn(e);
+          return t || r || a || n ? o = d(this, e, s, t, n, a, r) : o || (o = this.programs[e] = d(this, e, s)), o
         },
         data: function(e, t) {
           for (; e && t--;) e = e._parent;
@@ -493,11 +493,11 @@ function Http() {
           return e && t && e !== t && (n = f.extend({}, t, e)), n
         },
         nullContext: a({}),
-        noop: s.VM.noop,
+        noop: i.VM.noop,
         compilerInfo: l.compiler
       };
       return c.isTop = !0, c._setup = function(e) {
-        e.partial ? (u.helpers = e.helpers, u.partials = e.partials, u.decorators = e.decorators) : (u.helpers = u.merge(e.helpers, s.helpers), l.usePartial && (u.partials = u.merge(e.partials, s.partials)), (l.usePartial || l.useDecorators) && (u.decorators = u.merge(e.decorators, s.decorators)))
+        e.partial ? (u.helpers = e.helpers, u.partials = e.partials, u.decorators = e.decorators) : (u.helpers = u.merge(e.helpers, i.helpers), l.usePartial && (u.partials = u.merge(e.partials, i.partials)), (l.usePartial || l.useDecorators) && (u.decorators = u.merge(e.decorators, i.decorators)))
       }, c._child = function(e, t, n, a) {
         if (l.useBlockParams && !n) throw new m.default("must pass block params");
         if (l.useDepths && !a) throw new m.default("must pass parent depths");
@@ -509,7 +509,7 @@ function Http() {
       var r = a.data && a.data["partial-block"];
       a.partial = !0, a.ids && (a.data.contextPath = a.ids[0] || a.data.contextPath);
       var o = void 0;
-      if (a.fn && a.fn !== i && function() {
+      if (a.fn && a.fn !== s && function() {
           a.data = h.createFrame(a.data);
           var n = a.fn;
           o = a.data["partial-block"] = function(e) {
@@ -518,7 +518,7 @@ function Http() {
           }, n.partials && (a.partials = f.extend({}, a.partials, n.partials))
         }(), void 0 === e && o && (e = o), void 0 === e) throw new m.default("The partial " + a.name + " could not be found");
       if (e instanceof Function) return e(t, a)
-    }, t.noop = i;
+    }, t.noop = s;
     var f = r(n(4)),
       m = o(n(5)),
       h = n(3)
@@ -543,11 +543,11 @@ function Http() {
   }, function(e, t, n) {
     var r = n(27),
       o = n(29),
-      i = n(32);
+      s = n(32);
     e.exports = function(e, t) {
       var n = (o.Object || {})[e] || Object[e],
         a = {};
-      a[e] = t(n), r(r.S + r.F * i(function() {
+      a[e] = t(n), r(r.S + r.F * s(function() {
         n(1)
       }), "Object", a)
     }
@@ -557,15 +557,15 @@ function Http() {
       v = n(30),
       g = "prototype",
       y = function(e, t, n) {
-        var a, r, o, i = e & y.F,
-          s = e & y.G,
+        var a, r, o, s = e & y.F,
+          i = e & y.G,
           l = e & y.S,
           c = e & y.P,
           u = e & y.B,
           d = e & y.W,
-          p = s ? h : h[t] || (h[t] = {}),
-          f = s ? m : l ? m[t] : (m[t] || {})[g];
-        for (a in s && (n = t), n)(r = !i && f && a in f) && a in p || (o = r ? f[a] : n[a], p[a] = s && "function" != typeof f[a] ? n[a] : u && r ? v(o, m) : d && f[a] == o ? function(t) {
+          p = i ? h : h[t] || (h[t] = {}),
+          f = i ? m : l ? m[t] : (m[t] || {})[g];
+        for (a in i && (n = t), n)(r = !s && f && a in f) && a in p || (o = r ? f[a] : n[a], p[a] = i && "function" != typeof f[a] ? n[a] : u && r ? v(o, m) : d && f[a] == o ? function(t) {
           var e = function(e) {
             return this instanceof t ? new t(e) : t(e)
           };
@@ -666,8 +666,8 @@ function Http() {
           a = void 0 === n ? [] : n,
           r = e.onShow,
           o = void 0 === r ? function() {} : r,
-          i = e.onClose,
-          s = void 0 === i ? function() {} : i,
+          s = e.onClose,
+          i = void 0 === s ? function() {} : s,
           l = e.openTrigger,
           c = void 0 === l ? "data-micromodal-trigger" : l,
           u = e.closeTrigger,
@@ -688,7 +688,7 @@ function Http() {
           openTrigger: c,
           closeTrigger: d,
           onShow: o,
-          onClose: s,
+          onClose: i,
           awaitCloseAnimation: g,
           disableFocus: h
         }, 0 < a.length && this.registerTriggers.apply(this, k(a)), this.onClick = this.onClick.bind(this), this.onKeydown = this.onKeydown.bind(this)
@@ -793,7 +793,7 @@ function Http() {
             openTrigger: "data-micromodal-trigger"
           }, e),
           o = [].concat(k(document.querySelectorAll("[" + r.openTrigger + "]"))),
-          i = (t = o, n = r.openTrigger, a = [], t.forEach(function(e) {
+          s = (t = o, n = r.openTrigger, a = [], t.forEach(function(e) {
             var t = e.attributes[n].value;
             void 0 === a[t] && (a[t] = []), a[t].push(e)
           }), a);
@@ -801,10 +801,10 @@ function Http() {
             if (e.length, !t) return !0;
             for (var n in t) u(n);
             return !0
-          }(o, i))
-          for (var s in i) {
-            var l = i[s];
-            r.targetModal = s, r.triggers = [].concat(k(l)), new c(r)
+          }(o, s))
+          for (var i in s) {
+            var l = s[i];
+            r.targetModal = i, r.triggers = [].concat(k(l)), new c(r)
           }
       },
       show: function(e, t) {
@@ -818,31 +818,31 @@ function Http() {
   }), this.logMeIn = this.logMeIn || {}, this.logMeIn.templates = this.logMeIn.templates || {}, this.logMeIn.templates.cartItem = Handlebars.template({
     compiler: [7, ">= 4.0.0"],
     main: function(e, t, n, a, r) {
-      var o, i = null != t ? t : e.nullContext || {},
-        s = n.helperMissing,
+      var o, s = null != t ? t : e.nullContext || {},
+        i = n.helperMissing,
         l = "function",
         c = e.escapeExpression;
-      return '<li data-id="' + c(typeof(o = null != (o = n.id || (null != t ? t.id : t)) ? o : s) === l ? o.call(i, {
+      return '<li data-id="' + c(typeof(o = null != (o = n.id || (null != t ? t.id : t)) ? o : i) === l ? o.call(s, {
         name: "id",
         hash: {},
         data: r
-      }) : o) + '" class="cart__item">\n    <a href="#" data-id="' + c(typeof(o = null != (o = n.id || (null != t ? t.id : t)) ? o : s) === l ? o.call(i, {
+      }) : o) + '" class="cart__item">\n    <a href="#" data-id="' + c(typeof(o = null != (o = n.id || (null != t ? t.id : t)) ? o : i) === l ? o.call(s, {
         name: "id",
         hash: {},
         data: r
-      }) : o) + '" class="cart__item__remove">&times;</a>\n    <img srcset="' + c(typeof(o = null != (o = n.logo || (null != t ? t.logo : t)) ? o : s) === l ? o.call(i, {
+      }) : o) + '" class="cart__item__remove">&times;</a>\n    <img srcset="' + c(typeof(o = null != (o = n.logo || (null != t ? t.logo : t)) ? o : i) === l ? o.call(s, {
         name: "logo",
         hash: {},
         data: r
-      }) : o) + '" alt="Icon Product">\n    <div class="cart__item__info">\n    <h5 class="cart__item__info_title">\n      ' + c(typeof(o = null != (o = n.name || (null != t ? t.name : t)) ? o : s) === l ? o.call(i, {
+      }) : o) + '" alt="Icon Product">\n    <div class="cart__item__info">\n    <h5 class="cart__item__info_title">\n      ' + c(typeof(o = null != (o = n.name || (null != t ? t.name : t)) ? o : i) === l ? o.call(s, {
         name: "name",
         hash: {},
         data: r
-      }) : o) + '\n    </h5>\n    <small class="cart__item__info__desc">\n      ' + c(typeof(o = null != (o = n.description || (null != t ? t.description : t)) ? o : s) === l ? o.call(i, {
+      }) : o) + '\n    </h5>\n    <small class="cart__item__info__desc">\n      ' + c(typeof(o = null != (o = n.description || (null != t ? t.description : t)) ? o : i) === l ? o.call(s, {
         name: "description",
         hash: {},
         data: r
-      }) : o) + '\n    </small>\n    <div class="buying-opt">\n      <div class="buying-opt__quantity">\n      <small>Quantity per computer</small>\n      <div class="quantity__license">\n          <a class="quantity__license_decrease" href="">-</a>\n          <input type="text">\n          <a class="quantity__license__increase" href="">+</a>\n      </div>\n      </div>\n      <div class="buying-opt__pricing">\n      <p class="buying-opt__pricing__value">' + c(typeof(o = null != (o = n.price || (null != t ? t.price : t)) ? o : s) === l ? o.call(i, {
+      }) : o) + '\n    </small>\n    <div class="buying-opt">\n      <div class="buying-opt__quantity">\n      <small>Quantity per computer</small>\n      <div class="quantity__license">\n          <a class="quantity__license_decrease" href="">-</a>\n          <input type="text">\n          <a class="quantity__license__increase" href="">+</a>\n      </div>\n      </div>\n      <div class="buying-opt__pricing">\n      <p class="buying-opt__pricing__value">' + c(typeof(o = null != (o = n.price || (null != t ? t.price : t)) ? o : i) === l ? o.call(s, {
         name: "price",
         hash: {},
         data: r
@@ -851,36 +851,36 @@ function Http() {
     useData: !0
   }), this.logMeIn = this.logMeIn || {}, this.logMeIn.templates = this.logMeIn.templates || {}, this.logMeIn.templates.inbundle = Handlebars.template({
     1: function(e, t, n, a, r) {
-      var o, i = null != t ? t : e.nullContext || {},
-        s = n.helperMissing,
+      var o, s = null != t ? t : e.nullContext || {},
+        i = n.helperMissing,
         l = e.escapeExpression;
-      return "  <li class='product-tag'><span class='close'>&times;</span><span class='name'>" + l("function" == typeof(o = null != (o = n.name || (null != t ? t.name : t)) ? o : s) ? o.call(i, {
+      return "  <li class='product-tag'><span class='close'>&times;</span><span class='name'>" + l("function" == typeof(o = null != (o = n.name || (null != t ? t.name : t)) ? o : i) ? o.call(s, {
         name: "name",
         hash: {},
         data: r
-      }) : o) + "</span> from $<span class='price-monthly'>" + l((n.twoDecimal || t && t.twoDecimal || s).call(i, null != t ? t.monthlyStartsPrice : t, {
+      }) : o) + "</span> from $<span class='price-monthly'>" + l((n.twoDecimal || t && t.twoDecimal || i).call(s, null != t ? t.monthlyStartsPrice : t, {
         name: "twoDecimal",
         hash: {},
         data: r
-      })) + "</span><span class='price-annually'>" + l((n.twoDecimal || t && t.twoDecimal || s).call(i, null != t ? t.annualStartsPrice : t, {
+      })) + "</span><span class='price-annually'>" + l((n.twoDecimal || t && t.twoDecimal || i).call(s, null != t ? t.annualStartsPrice : t, {
         name: "twoDecimal",
         hash: {},
         data: r
       })) + "</span></li>\n"
     },
     3: function(e, t, n, a, r) {
-      var o, i = null != t ? t : e.nullContext || {},
-        s = n.helperMissing,
+      var o, s = null != t ? t : e.nullContext || {},
+        i = n.helperMissing,
         l = e.escapeExpression;
-      return "  <li class='addon-tag'><span class='close'>&times;</span><span class='name'>" + l("function" == typeof(o = null != (o = n.name || (null != t ? t.name : t)) ? o : s) ? o.call(i, {
+      return "  <li class='addon-tag'><span class='close'>&times;</span><span class='name'>" + l("function" == typeof(o = null != (o = n.name || (null != t ? t.name : t)) ? o : i) ? o.call(s, {
         name: "name",
         hash: {},
         data: r
-      }) : o) + "</span> from $<span class='price-monthly'>" + l((n.twoDecimal || t && t.twoDecimal || s).call(i, null != t ? t.monthlyStartsPrice : t, {
+      }) : o) + "</span> from $<span class='price-monthly'>" + l((n.twoDecimal || t && t.twoDecimal || i).call(s, null != t ? t.monthlyStartsPrice : t, {
         name: "twoDecimal",
         hash: {},
         data: r
-      })) + "</span><span class='price-annually'>" + l((n.twoDecimal || t && t.twoDecimal || s).call(i, null != t ? t.annualStartsPrice : t, {
+      })) + "</span><span class='price-annually'>" + l((n.twoDecimal || t && t.twoDecimal || i).call(s, null != t ? t.annualStartsPrice : t, {
         name: "twoDecimal",
         hash: {},
         data: r
@@ -888,53 +888,53 @@ function Http() {
     },
     compiler: [7, ">= 4.0.0"],
     main: function(e, t, n, a, r) {
-      var o, i, s, l = null != t ? t : e.nullContext || {},
+      var o, s, i, l = null != t ? t : e.nullContext || {},
         c = n.helperMissing,
         u = "function",
         d = n.blockHelperMissing,
         p = "<span class='summary__bundle'>Bundle Contents:</span>\n<ul class='bundle-list'>\n";
-      return i = null != (i = n.products || (null != t ? t.products : t)) ? i : c, s = {
+      return s = null != (s = n.products || (null != t ? t.products : t)) ? s : c, i = {
         name: "products",
         hash: {},
         fn: e.program(1, r, 0),
         inverse: e.noop,
         data: r
-      }, o = typeof i === u ? i.call(l, s) : i, n.products || (o = d.call(t, o, s)), null != o && (p += o), i = null != (i = n.addons || (null != t ? t.addons : t)) ? i : c, s = {
+      }, o = typeof s === u ? s.call(l, i) : s, n.products || (o = d.call(t, o, i)), null != o && (p += o), s = null != (s = n.addons || (null != t ? t.addons : t)) ? s : c, i = {
         name: "addons",
         hash: {},
         fn: e.program(3, r, 0),
         inverse: e.noop,
         data: r
-      }, o = typeof i === u ? i.call(l, s) : i, n.addons || (o = d.call(t, o, s)), null != o && (p += o), p + "</ul>\n"
+      }, o = typeof s === u ? s.call(l, i) : s, n.addons || (o = d.call(t, o, i)), null != o && (p += o), p + "</ul>\n"
     },
     useData: !0
   }), this.logMeIn = this.logMeIn || {}, this.logMeIn.templates = this.logMeIn.templates || {}, this.logMeIn.templates.products = Handlebars.template({
     1: function(e, t, n, a, r) {
-      var o, i = null != t ? t : e.nullContext || {},
-        s = n.helperMissing,
+      var o, s = null != t ? t : e.nullContext || {},
+        i = n.helperMissing,
         l = "function",
         c = e.escapeExpression;
-      return '<li data-id="' + c(typeof(o = null != (o = n.id || (null != t ? t.id : t)) ? o : s) === l ? o.call(i, {
+      return '<li data-id="' + c(typeof(o = null != (o = n.id || (null != t ? t.id : t)) ? o : i) === l ? o.call(s, {
         name: "id",
         hash: {},
         data: r
-      }) : o) + "\" class='product'>\n  <img srcset=\"" + c(typeof(o = null != (o = n.logo || (null != t ? t.logo : t)) ? o : s) === l ? o.call(i, {
+      }) : o) + "\" class='product'>\n  <img srcset=\"" + c(typeof(o = null != (o = n.logo || (null != t ? t.logo : t)) ? o : i) === l ? o.call(s, {
         name: "logo",
         hash: {},
         data: r
-      }) : o) + '" alt="Icon Products">\n  <div class="product__meta">\n  <div class="product__title">\n    <h6>' + c(typeof(o = null != (o = n.name || (null != t ? t.name : t)) ? o : s) === l ? o.call(i, {
+      }) : o) + '" alt="Icon Products">\n  <div class="product__meta">\n  <div class="product__title">\n    <h6>' + c(typeof(o = null != (o = n.name || (null != t ? t.name : t)) ? o : i) === l ? o.call(s, {
         name: "name",
         hash: {},
         data: r
-      }) : o) + "</h6>\n    <small>" + c(typeof(o = null != (o = n.description || (null != t ? t.description : t)) ? o : s) === l ? o.call(i, {
+      }) : o) + "</h6>\n    <small>" + c(typeof(o = null != (o = n.description || (null != t ? t.description : t)) ? o : i) === l ? o.call(s, {
         name: "description",
         hash: {},
         data: r
-      }) : o) + '</small>\n  </div>\n  <div class="product__price">\n    <p class="product__price__value">US ' + c(typeof(o = null != (o = n.price || (null != t ? t.price : t)) ? o : s) === l ? o.call(i, {
+      }) : o) + '</small>\n  </div>\n  <div class="product__price">\n    <p class="product__price__value">US ' + c(typeof(o = null != (o = n.price || (null != t ? t.price : t)) ? o : i) === l ? o.call(s, {
         name: "price",
         hash: {},
         data: r
-      }) : o) + '</p>\n    <small class="product__price__info">/mo per computer</small>\n  </div>\n  </div>\n  <a href="javascript:void(0);" data-id="' + c(typeof(o = null != (o = n.id || (null != t ? t.id : t)) ? o : s) === l ? o.call(i, {
+      }) : o) + '</p>\n    <small class="product__price__info">/mo per computer</small>\n  </div>\n  </div>\n  <a href="javascript:void(0);" data-id="' + c(typeof(o = null != (o = n.id || (null != t ? t.id : t)) ? o : i) === l ? o.call(s, {
         name: "id",
         hash: {},
         data: r
@@ -957,74 +957,74 @@ function Http() {
       return '  <div class="products-empty-h1">\n    Not seeing what you’re looking for?\n  </div>\n  <div class="products-empty-h2">\n    It doesn’t look like we have a solution for that yet.\n    Please update your selection to see more recommendations.\n  </div>\n'
     },
     3: function(e, t, n, a, r, o) {
-      var i;
-      return null != (i = n.with.call(null != t ? t : e.nullContext || {}, null != t ? t.product : t, {
+      var s;
+      return null != (s = n.with.call(null != t ? t : e.nullContext || {}, null != t ? t.product : t, {
         name: "with",
         hash: {},
         fn: e.program(4, r, 0, o),
         inverse: e.noop,
         data: r,
         blockParams: o
-      })) ? i : ""
+      })) ? s : ""
     },
     4: function(e, t, n, a, r, o) {
-      var i, s, l = null != t ? t : e.nullContext || {},
+      var s, i, l = null != t ? t : e.nullContext || {},
         c = n.helperMissing,
         u = "function",
         d = e.escapeExpression;
-      return '  <li class="recomendation-item ' + d(typeof(s = null != (s = n.activeState || (null != t ? t.activeState : t)) ? s : c) === u ? s.call(l, {
+      return '  <li class="recomendation-item ' + d(typeof(i = null != (i = n.activeState || (null != t ? t.activeState : t)) ? i : c) === u ? i.call(l, {
         name: "activeState",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + '" data-product="' + d(typeof(s = null != (s = n.name || (null != t ? t.name : t)) ? s : c) === u ? s.call(l, {
+      }) : i) + '" data-product="' + d(typeof(i = null != (i = n.name || (null != t ? t.name : t)) ? i : c) === u ? i.call(l, {
         name: "name",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + '" data-type="product">\n    <div class="tags">\n' + (null != (i = n.each.call(l, null != t ? t.tags : t, {
+      }) : i) + '" data-type="product">\n    <div class="tags">\n' + (null != (s = n.each.call(l, null != t ? t.tags : t, {
         name: "each",
         hash: {},
         fn: e.program(5, r, 2, o),
         inverse: e.noop,
         data: r,
         blockParams: o
-      })) ? i : "") + '    </div>\n    <img srcset="' + d(typeof(s = null != (s = n.logo || (null != t ? t.logo : t)) ? s : c) === u ? s.call(l, {
+      })) ? s : "") + '    </div>\n    <img srcset="' + d(typeof(i = null != (i = n.logo || (null != t ? t.logo : t)) ? i : c) === u ? i.call(l, {
         name: "logo",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + '" alt="' + d(typeof(s = null != (s = n.name || (null != t ? t.name : t)) ? s : c) === u ? s.call(l, {
+      }) : i) + '" alt="' + d(typeof(i = null != (i = n.name || (null != t ? t.name : t)) ? i : c) === u ? i.call(l, {
         name: "name",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + '" class="product-recomendation">\n    <p><span class="product-title">' + d(typeof(s = null != (s = n.name || (null != t ? t.name : t)) ? s : c) === u ? s.call(l, {
+      }) : i) + '" class="product-recomendation">\n    <p><span class="product-title">' + d(typeof(i = null != (i = n.name || (null != t ? t.name : t)) ? i : c) === u ? i.call(l, {
         name: "name",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + "</span><br/>" + d(typeof(s = null != (s = n.description || (null != t ? t.description : t)) ? s : c) === u ? s.call(l, {
+      }) : i) + "</span><br/>" + d(typeof(i = null != (i = n.description || (null != t ? t.description : t)) ? i : c) === u ? i.call(l, {
         name: "description",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + '<a class="learn" target="_blank" href="' + d(typeof(s = null != (s = n.url || (null != t ? t.url : t)) ? s : c) === u ? s.call(l, {
+      }) : i) + '<a class="learn" target="_blank" href="' + d(typeof(i = null != (i = n.url || (null != t ? t.url : t)) ? i : c) === u ? i.call(l, {
         name: "url",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + '">Learn More</a></p>\n    <div class="action">\n      \x3c!-- <a class="learn" target="_blank" href="' + d(typeof(s = null != (s = n.url || (null != t ? t.url : t)) ? s : c) === u ? s.call(l, {
+      }) : i) + '">Learn More</a></p>\n    <div class="action">\n      \x3c!-- <a class="learn" target="_blank" href="' + d(typeof(i = null != (i = n.url || (null != t ? t.url : t)) ? i : c) === u ? i.call(l, {
         name: "url",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + '">Learn More</a> --\x3e\n      <a class="price price--monthly ' + d(typeof(s = null != (s = n.name || (null != t ? t.name : t)) ? s : c) === u ? s.call(l, {
+      }) : i) + '">Learn More</a> --\x3e\n      <a class="price price--monthly ' + d(typeof(i = null != (i = n.name || (null != t ? t.name : t)) ? i : c) === u ? i.call(l, {
         name: "name",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + "\" href=\"javascript:void(0)\">\n        <span class='add'>View Pricing</span>\n        <span class='plus'>&plus;</span>\n        <span class='check'><img src=\"images/revised-assets/check-white.svg\"></span>\n        <span class='price__sign'>$</span>\n        <span class='price__value'>" + d((n.twoDecimal || t && t.twoDecimal || c).call(l, null != t ? t.monthlyStartsPrice : t, {
+      }) : i) + "\" href=\"javascript:void(0)\">\n        <span class='add'>View Pricing</span>\n        <span class='plus'>&plus;</span>\n        <span class='check'><img src=\"images/revised-assets/check-white.svg\"></span>\n        <span class='price__sign'>$</span>\n        <span class='price__value'>" + d((n.twoDecimal || t && t.twoDecimal || c).call(l, null != t ? t.monthlyStartsPrice : t, {
         name: "twoDecimal",
         hash: {},
         data: r,
@@ -1034,12 +1034,12 @@ function Http() {
         hash: {},
         data: r,
         blockParams: o
-      })) + "</span>\n        <span class='custom'>Custom</span>\n      </a>\n      <a class=\"price price--annually " + d(typeof(s = null != (s = n.name || (null != t ? t.name : t)) ? s : c) === u ? s.call(l, {
+      })) + "</span>\n        <span class='custom'>Custom</span>\n      </a>\n      <a class=\"price price--annually " + d(typeof(i = null != (i = n.name || (null != t ? t.name : t)) ? i : c) === u ? i.call(l, {
         name: "name",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + "\" href=\"javascript:void(0)\">\n        <span class='add'>View Pricing</span>\n        <span class='plus'>&plus;</span>\n        <span class='check'><img src=\"images/revised-assets/check-white.svg\"></span>\n        <span class='price__sign'>$</span>\n        <span class='price__value'>" + d((n.twoDecimal || t && t.twoDecimal || c).call(l, null != t ? t.annualStartsPrice : t, {
+      }) : i) + "\" href=\"javascript:void(0)\">\n        <span class='add'>View Pricing</span>\n        <span class='plus'>&plus;</span>\n        <span class='check'><img src=\"images/revised-assets/check-white.svg\"></span>\n        <span class='price__sign'>$</span>\n        <span class='price__value'>" + d((n.twoDecimal || t && t.twoDecimal || c).call(l, null != t ? t.annualStartsPrice : t, {
         name: "twoDecimal",
         hash: {},
         data: r,
@@ -1055,100 +1055,100 @@ function Http() {
       return "      <span class='tag'>" + e.escapeExpression(e.lambda(o[0][0], t)) + "</span>\n"
     },
     7: function(e, t, n, a, r, o) {
-      var i, s, l = null != t ? t : e.nullContext || {};
-      return '<h4>Add-ons:</h4>\n<ul class="recomendation-solution recomendation-additional" data-product="' + e.escapeExpression("function" == typeof(s = null != (s = n.name || (null != t ? t.name : t)) ? s : n.helperMissing) ? s.call(l, {
+      var s, i, l = null != t ? t : e.nullContext || {};
+      return '<h4>Add-ons:</h4>\n<ul class="recomendation-solution recomendation-additional" data-product="' + e.escapeExpression("function" == typeof(i = null != (i = n.name || (null != t ? t.name : t)) ? i : n.helperMissing) ? i.call(l, {
         name: "name",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + '" data-type="addon">\n' + (null != (i = n.each.call(l, null != t ? t.addons : t, {
+      }) : i) + '" data-type="addon">\n' + (null != (s = n.each.call(l, null != t ? t.addons : t, {
         name: "each",
         hash: {},
         fn: e.program(8, r, 0, o),
         inverse: e.noop,
         data: r,
         blockParams: o
-      })) ? i : "") + "</ul>\n"
+      })) ? s : "") + "</ul>\n"
     },
     8: function(e, t, n, a, r, o) {
-      var i;
-      return null != (i = n.with.call(null != t ? t : e.nullContext || {}, null != t ? t.addon : t, {
+      var s;
+      return null != (s = n.with.call(null != t ? t : e.nullContext || {}, null != t ? t.addon : t, {
         name: "with",
         hash: {},
         fn: e.program(9, r, 0, o),
         inverse: e.noop,
         data: r,
         blockParams: o
-      })) ? i : ""
+      })) ? s : ""
     },
     9: function(e, t, n, a, r, o) {
-      var i, s, l = null != t ? t : e.nullContext || {},
+      var s, i, l = null != t ? t : e.nullContext || {},
         c = n.helperMissing,
         u = "function",
         d = e.escapeExpression;
-      return '  <li class="recomendation-item ' + d(typeof(s = null != (s = n.activeState || (null != t ? t.activeState : t)) ? s : c) === u ? s.call(l, {
+      return '  <li class="recomendation-item ' + d(typeof(i = null != (i = n.activeState || (null != t ? t.activeState : t)) ? i : c) === u ? i.call(l, {
         name: "activeState",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + '" data-product="' + d(typeof(s = null != (s = n.name || (null != t ? t.name : t)) ? s : c) === u ? s.call(l, {
+      }) : i) + '" data-product="' + d(typeof(i = null != (i = n.name || (null != t ? t.name : t)) ? i : c) === u ? i.call(l, {
         name: "name",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + '" data-type="addon">\n    <div class="tags">\n' + (null != (i = n.each.call(l, null != t ? t.tags : t, {
+      }) : i) + '" data-type="addon">\n    <div class="tags">\n' + (null != (s = n.each.call(l, null != t ? t.tags : t, {
         name: "each",
         hash: {},
         fn: e.program(5, r, 2, o),
         inverse: e.noop,
         data: r,
         blockParams: o
-      })) ? i : "") + '    </div>\n    <img srcset="' + d(typeof(s = null != (s = n.logo || (null != t ? t.logo : t)) ? s : c) === u ? s.call(l, {
+      })) ? s : "") + '    </div>\n    <img srcset="' + d(typeof(i = null != (i = n.logo || (null != t ? t.logo : t)) ? i : c) === u ? i.call(l, {
         name: "logo",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + '" alt="' + d(typeof(s = null != (s = n.name || (null != t ? t.name : t)) ? s : c) === u ? s.call(l, {
+      }) : i) + '" alt="' + d(typeof(i = null != (i = n.name || (null != t ? t.name : t)) ? i : c) === u ? i.call(l, {
         name: "name",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + '" class="product-recomendation">\n    <p><span class="product-title">' + d(typeof(s = null != (s = n.name || (null != t ? t.name : t)) ? s : c) === u ? s.call(l, {
+      }) : i) + '" class="product-recomendation">\n    <p><span class="product-title">' + d(typeof(i = null != (i = n.name || (null != t ? t.name : t)) ? i : c) === u ? i.call(l, {
         name: "name",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + "</span><br/>" + d(typeof(s = null != (s = n.description || (null != t ? t.description : t)) ? s : c) === u ? s.call(l, {
+      }) : i) + "</span><br/>" + d(typeof(i = null != (i = n.description || (null != t ? t.description : t)) ? i : c) === u ? i.call(l, {
         name: "description",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + '<a class="learn" target="_blank" href="' + d(typeof(s = null != (s = n.url || (null != t ? t.url : t)) ? s : c) === u ? s.call(l, {
+      }) : i) + '<a class="learn" target="_blank" href="' + d(typeof(i = null != (i = n.url || (null != t ? t.url : t)) ? i : c) === u ? i.call(l, {
         name: "url",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + '">Learn More</a></p>\n    \x3c!-- <div class="action">\n      <a href="' + d(typeof(s = null != (s = n.url || (null != t ? t.url : t)) ? s : c) === u ? s.call(l, {
+      }) : i) + '">Learn More</a></p>\n    \x3c!-- <div class="action">\n      <a href="' + d(typeof(i = null != (i = n.url || (null != t ? t.url : t)) ? i : c) === u ? i.call(l, {
         name: "url",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + '">Learn More</a>\n      <a class="price" href="javascript:void(0)">\n        &plus; ' + d(typeof(s = null != (s = n.startingAt || (null != t ? t.startingAt : t)) ? s : c) === u ? s.call(l, {
+      }) : i) + '">Learn More</a>\n      <a class="price" href="javascript:void(0)">\n        &plus; ' + d(typeof(i = null != (i = n.startingAt || (null != t ? t.startingAt : t)) ? i : c) === u ? i.call(l, {
         name: "startingAt",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + " " + d((n.paymentInterval || t && t.paymentInterval || c).call(l, null != t ? t.period : t, {
+      }) : i) + " " + d((n.paymentInterval || t && t.paymentInterval || c).call(l, null != t ? t.period : t, {
         name: "paymentInterval",
         hash: {},
         data: r,
         blockParams: o
-      })) + '\n      </a>\n    </div> --\x3e\n    <div class="action">\n      \x3c!-- <a class="learn" target="_blank" href="' + d(typeof(s = null != (s = n.url || (null != t ? t.url : t)) ? s : c) === u ? s.call(l, {
+      })) + '\n      </a>\n    </div> --\x3e\n    <div class="action">\n      \x3c!-- <a class="learn" target="_blank" href="' + d(typeof(i = null != (i = n.url || (null != t ? t.url : t)) ? i : c) === u ? i.call(l, {
         name: "url",
         hash: {},
         data: r,
         blockParams: o
-      }) : s) + "\">Learn More</a> --\x3e\n      <a class=\"price price--monthly\" href=\"javascript:void(0)\">\n        <span class='add'>View Pricing</span>\n        <span class='plus'>&plus;</span>\n        <span class='check'><img src=\"images/revised-assets/check-white.svg\"></span>\n        <span class='price__sign'>$</span>\n        <span class='price__value'>" + d((n.twoDecimal || t && t.twoDecimal || c).call(l, null != t ? t.monthlyStartsPrice : t, {
+      }) : i) + "\">Learn More</a> --\x3e\n      <a class=\"price price--monthly\" href=\"javascript:void(0)\">\n        <span class='add'>View Pricing</span>\n        <span class='plus'>&plus;</span>\n        <span class='check'><img src=\"images/revised-assets/check-white.svg\"></span>\n        <span class='price__sign'>$</span>\n        <span class='price__value'>" + d((n.twoDecimal || t && t.twoDecimal || c).call(l, null != t ? t.monthlyStartsPrice : t, {
         name: "twoDecimal",
         hash: {},
         data: r,
@@ -1172,33 +1172,33 @@ function Http() {
     },
     compiler: [7, ">= 4.0.0"],
     main: function(e, t, n, a, r, o) {
-      var i, s, l, c = null != t ? t : e.nullContext || {},
+      var s, i, l, c = null != t ? t : e.nullContext || {},
         u = n.helperMissing,
         d = "function",
         p = n.blockHelperMissing,
         f = '<h4>Recommendations:</h4>\n<ul class="recomendation-solution recomendation-primary">\n';
-      return s = null != (s = n.productsEmpty || (null != t ? t.productsEmpty : t)) ? s : u, l = {
+      return i = null != (i = n.productsEmpty || (null != t ? t.productsEmpty : t)) ? i : u, l = {
         name: "productsEmpty",
         hash: {},
         fn: e.program(1, r, 0, o),
         inverse: e.noop,
         data: r,
         blockParams: o
-      }, i = typeof s === d ? s.call(c, l) : s, n.productsEmpty || (i = p.call(t, i, l)), null != i && (f += i), f += (null != (i = n.each.call(c, null != t ? t.products : t, {
+      }, s = typeof i === d ? i.call(c, l) : i, n.productsEmpty || (s = p.call(t, s, l)), null != s && (f += s), f += (null != (s = n.each.call(c, null != t ? t.products : t, {
         name: "each",
         hash: {},
         fn: e.program(3, r, 0, o),
         inverse: e.noop,
         data: r,
         blockParams: o
-      })) ? i : "") + "</ul>\n", s = null != (s = n.hasAddons || (null != t ? t.hasAddons : t)) ? s : u, l = {
+      })) ? s : "") + "</ul>\n", i = null != (i = n.hasAddons || (null != t ? t.hasAddons : t)) ? i : u, l = {
         name: "hasAddons",
         hash: {},
         fn: e.program(7, r, 0, o),
         inverse: e.noop,
         data: r,
         blockParams: o
-      }, i = typeof s === d ? s.call(c, l) : s, n.hasAddons || (i = p.call(t, i, l)), null != i && (f += i), f
+      }, s = typeof i === d ? i.call(c, l) : i, n.hasAddons || (s = p.call(t, s, l)), null != s && (f += s), f
     },
     useData: !0,
     useBlockParams: !0
@@ -1224,17 +1224,17 @@ function Http() {
       "use strict";
 
       function a(e) {
-        var t = new i(e),
-          n = o(i.prototype.request, t);
-        return r.extend(n, i.prototype, t), r.extend(n, t), n
+        var t = new s(e),
+          n = o(s.prototype.request, t);
+        return r.extend(n, s.prototype, t), r.extend(n, t), n
       }
       var r = n(2),
         o = n(3),
-        i = n(5),
-        s = n(22),
+        s = n(5),
+        i = n(22),
         l = a(n(11));
-      l.Axios = i, l.create = function(e) {
-        return a(s(l.defaults, e))
+      l.Axios = s, l.create = function(e) {
+        return a(i(l.defaults, e))
       }, l.Cancel = n(23), l.CancelToken = n(24), l.isCancel = n(10), l.all = function(e) {
         return Promise.all(e)
       }, l.spread = n(25), e.exports = l, e.exports.default = l
@@ -1253,14 +1253,14 @@ function Http() {
         return "[object Function]" === c.call(e)
       }
 
-      function i(e, t) {
+      function s(e, t) {
         if (null != e)
           if ("object" != typeof e && (e = [e]), o(e))
             for (var n = 0, a = e.length; n < a; n++) t.call(null, e[n], n, e);
           else
             for (var r in e) Object.prototype.hasOwnProperty.call(e, r) && t.call(null, e[r], r, e)
       }
-      var s = n(3),
+      var i = n(3),
         l = n(4),
         c = Object.prototype.toString;
       e.exports = {
@@ -1304,24 +1304,24 @@ function Http() {
         isStandardBrowserEnv: function() {
           return ("undefined" == typeof navigator || "ReactNative" !== navigator.product && "NativeScript" !== navigator.product && "NS" !== navigator.product) && "undefined" != typeof window && "undefined" != typeof document
         },
-        forEach: i,
+        forEach: s,
         merge: function n() {
           function e(e, t) {
             "object" == typeof a[t] && "object" == typeof e ? a[t] = n(a[t], e) : a[t] = e
           }
-          for (var a = {}, t = 0, r = arguments.length; t < r; t++) i(arguments[t], e);
+          for (var a = {}, t = 0, r = arguments.length; t < r; t++) s(arguments[t], e);
           return a
         },
         deepMerge: function n() {
           function e(e, t) {
             "object" == typeof a[t] && "object" == typeof e ? a[t] = n(a[t], e) : a[t] = "object" == typeof e ? n({}, e) : e
           }
-          for (var a = {}, t = 0, r = arguments.length; t < r; t++) i(arguments[t], e);
+          for (var a = {}, t = 0, r = arguments.length; t < r; t++) s(arguments[t], e);
           return a
         },
         extend: function(n, e, a) {
-          return i(e, function(e, t) {
-            n[t] = a && "function" == typeof e ? s(e, a) : e
+          return s(e, function(e, t) {
+            n[t] = a && "function" == typeof e ? i(e, a) : e
           }), n
         },
         trim: function(e) {
@@ -1345,18 +1345,18 @@ function Http() {
 
       function r(e) {
         this.defaults = e, this.interceptors = {
-          request: new i,
-          response: new i
+          request: new s,
+          response: new s
         }
       }
       var o = n(2),
         a = n(6),
-        i = n(7),
-        s = n(8),
+        s = n(7),
+        i = n(8),
         l = n(22);
       r.prototype.request = function(e) {
         "string" == typeof e ? (e = arguments[1] || {}).url = arguments[0] : e = e || {}, (e = l(this.defaults, e)).method = e.method ? e.method.toLowerCase() : "get";
-        var t = [s, void 0],
+        var t = [i, void 0],
           n = Promise.resolve(e);
         for (this.interceptors.request.forEach(function(e) {
             t.unshift(e.fulfilled, e.rejected)
@@ -1385,20 +1385,20 @@ function Http() {
     }, function(e, t, n) {
       "use strict";
 
-      function i(e) {
+      function s(e) {
         return encodeURIComponent(e).replace(/%40/gi, "@").replace(/%3A/gi, ":").replace(/%24/g, "$").replace(/%2C/gi, ",").replace(/%20/g, "+").replace(/%5B/gi, "[").replace(/%5D/gi, "]")
       }
-      var s = n(2);
+      var i = n(2);
       e.exports = function(e, t, n) {
         if (!t) return e;
         var a;
         if (n) a = n(t);
-        else if (s.isURLSearchParams(t)) a = t.toString();
+        else if (i.isURLSearchParams(t)) a = t.toString();
         else {
           var r = [];
-          s.forEach(t, function(e, t) {
-            null != e && (s.isArray(e) ? t += "[]" : e = [e], s.forEach(e, function(e) {
-              s.isDate(e) ? e = e.toISOString() : s.isObject(e) && (e = JSON.stringify(e)), r.push(i(t) + "=" + i(e))
+          i.forEach(t, function(e, t) {
+            null != e && (i.isArray(e) ? t += "[]" : e = [e], i.forEach(e, function(e) {
+              i.isDate(e) ? e = e.toISOString() : i.isObject(e) && (e = JSON.stringify(e)), r.push(s(t) + "=" + s(e))
             }))
           }), a = r.join("&")
         }
@@ -1434,17 +1434,17 @@ function Http() {
       }
       var r = n(2),
         o = n(9),
-        i = n(10),
-        s = n(11),
+        s = n(10),
+        i = n(11),
         l = n(20),
         c = n(21);
       e.exports = function(t) {
         return a(t), t.baseURL && !l(t.url) && (t.url = c(t.baseURL, t.url)), t.headers = t.headers || {}, t.data = o(t.data, t.headers, t.transformRequest), t.headers = r.merge(t.headers.common || {}, t.headers[t.method] || {}, t.headers || {}), r.forEach(["delete", "get", "head", "post", "put", "patch", "common"], function(e) {
           delete t.headers[e]
-        }), (t.adapter || s.adapter)(t).then(function(e) {
+        }), (t.adapter || i.adapter)(t).then(function(e) {
           return a(t), e.data = o(e.data, e.headers, t.transformResponse), e
         }, function(e) {
-          return i(e) || (a(t), e && e.response && (e.response.data = o(e.response.data, e.response.headers, t.transformResponse))), Promise.reject(e)
+          return s(e) || (a(t), e && e.response && (e.response.data = o(e.response.data, e.response.headers, t.transformResponse))), Promise.reject(e)
         })
       }
     }, function(e, t, n) {
@@ -1467,14 +1467,14 @@ function Http() {
         !o.isUndefined(e) && o.isUndefined(e["Content-Type"]) && (e["Content-Type"] = t)
       }
       var r, o = n(2),
-        i = n(12),
-        s = {
+        s = n(12),
+        i = {
           "Content-Type": "application/x-www-form-urlencoded"
         },
         l = {
           adapter: ("undefined" != typeof process && "[object process]" === Object.prototype.toString.call(process) ? r = n(13) : "undefined" != typeof XMLHttpRequest && (r = n(13)), r),
           transformRequest: [function(e, t) {
-            return i(t, "Accept"), i(t, "Content-Type"), o.isFormData(e) || o.isArrayBuffer(e) || o.isBuffer(e) || o.isStream(e) || o.isFile(e) || o.isBlob(e) ? e : o.isArrayBufferView(e) ? e.buffer : o.isURLSearchParams(e) ? (a(t, "application/x-www-form-urlencoded;charset=utf-8"), e.toString()) : o.isObject(e) ? (a(t, "application/json;charset=utf-8"), JSON.stringify(e)) : e
+            return s(t, "Accept"), s(t, "Content-Type"), o.isFormData(e) || o.isArrayBuffer(e) || o.isBuffer(e) || o.isStream(e) || o.isFile(e) || o.isBlob(e) ? e : o.isArrayBufferView(e) ? e.buffer : o.isURLSearchParams(e) ? (a(t, "application/x-www-form-urlencoded;charset=utf-8"), e.toString()) : o.isObject(e) ? (a(t, "application/json;charset=utf-8"), JSON.stringify(e)) : e
           }],
           transformResponse: [function(e) {
             if ("string" == typeof e) try {
@@ -1497,7 +1497,7 @@ function Http() {
       }, o.forEach(["delete", "get", "head"], function(e) {
         l.headers[e] = {}
       }), o.forEach(["post", "put", "patch"], function(e) {
-        l.headers[e] = o.merge(s)
+        l.headers[e] = o.merge(i)
       }), e.exports = l
     }, function(e, t, n) {
       "use strict";
@@ -1520,46 +1520,46 @@ function Http() {
           var r = c.data,
             o = c.headers;
           d.isFormData(r) && delete o["Content-Type"];
-          var i = new XMLHttpRequest;
+          var s = new XMLHttpRequest;
           if (c.auth) {
             var e = c.auth.username || "",
               t = c.auth.password || "";
             o.Authorization = "Basic " + btoa(e + ":" + t)
           }
-          if (i.open(c.method.toUpperCase(), f(c.url, c.params, c.paramsSerializer), !0), i.timeout = c.timeout, i.onreadystatechange = function() {
-              if (i && 4 === i.readyState && (0 !== i.status || i.responseURL && 0 === i.responseURL.indexOf("file:"))) {
-                var e = "getAllResponseHeaders" in i ? m(i.getAllResponseHeaders()) : null,
+          if (s.open(c.method.toUpperCase(), f(c.url, c.params, c.paramsSerializer), !0), s.timeout = c.timeout, s.onreadystatechange = function() {
+              if (s && 4 === s.readyState && (0 !== s.status || s.responseURL && 0 === s.responseURL.indexOf("file:"))) {
+                var e = "getAllResponseHeaders" in s ? m(s.getAllResponseHeaders()) : null,
                   t = {
-                    data: c.responseType && "text" !== c.responseType ? i.response : i.responseText,
-                    status: i.status,
-                    statusText: i.statusText,
+                    data: c.responseType && "text" !== c.responseType ? s.response : s.responseText,
+                    status: s.status,
+                    statusText: s.statusText,
                     headers: e,
                     config: c,
-                    request: i
+                    request: s
                   };
-                p(n, a, t), i = null
+                p(n, a, t), s = null
               }
-            }, i.onabort = function() {
-              i && (a(v("Request aborted", c, "ECONNABORTED", i)), i = null)
-            }, i.onerror = function() {
-              a(v("Network Error", c, null, i)), i = null
-            }, i.ontimeout = function() {
-              a(v("timeout of " + c.timeout + "ms exceeded", c, "ECONNABORTED", i)), i = null
+            }, s.onabort = function() {
+              s && (a(v("Request aborted", c, "ECONNABORTED", s)), s = null)
+            }, s.onerror = function() {
+              a(v("Network Error", c, null, s)), s = null
+            }, s.ontimeout = function() {
+              a(v("timeout of " + c.timeout + "ms exceeded", c, "ECONNABORTED", s)), s = null
             }, d.isStandardBrowserEnv()) {
-            var s = u(19),
-              l = (c.withCredentials || h(c.url)) && c.xsrfCookieName ? s.read(c.xsrfCookieName) : void 0;
+            var i = u(19),
+              l = (c.withCredentials || h(c.url)) && c.xsrfCookieName ? i.read(c.xsrfCookieName) : void 0;
             l && (o[c.xsrfHeaderName] = l)
           }
-          if ("setRequestHeader" in i && d.forEach(o, function(e, t) {
-              void 0 === r && "content-type" === t.toLowerCase() ? delete o[t] : i.setRequestHeader(t, e)
-            }), c.withCredentials && (i.withCredentials = !0), c.responseType) try {
-            i.responseType = c.responseType
+          if ("setRequestHeader" in s && d.forEach(o, function(e, t) {
+              void 0 === r && "content-type" === t.toLowerCase() ? delete o[t] : s.setRequestHeader(t, e)
+            }), c.withCredentials && (s.withCredentials = !0), c.responseType) try {
+            s.responseType = c.responseType
           } catch (n) {
             if ("json" !== c.responseType) throw n
           }
-          "function" == typeof c.onDownloadProgress && i.addEventListener("progress", c.onDownloadProgress), "function" == typeof c.onUploadProgress && i.upload && i.upload.addEventListener("progress", c.onUploadProgress), c.cancelToken && c.cancelToken.promise.then(function(e) {
-            i && (i.abort(), a(e), i = null)
-          }), void 0 === r && (r = null), i.send(r)
+          "function" == typeof c.onDownloadProgress && s.addEventListener("progress", c.onDownloadProgress), "function" == typeof c.onUploadProgress && s.upload && s.upload.addEventListener("progress", c.onUploadProgress), c.cancelToken && c.cancelToken.promise.then(function(e) {
+            s && (s.abort(), a(e), s = null)
+          }), void 0 === r && (r = null), s.send(r)
         })
       }
     }, function(e, t, n) {
@@ -1571,10 +1571,10 @@ function Http() {
       }
     }, function(e, t, n) {
       "use strict";
-      var i = n(16);
+      var s = n(16);
       e.exports = function(e, t, n, a, r) {
         var o = new Error(e);
-        return i(o, t, n, a, r)
+        return s(o, t, n, a, r)
       }
     }, function(e, t) {
       "use strict";
@@ -1597,20 +1597,20 @@ function Http() {
     }, function(e, t, n) {
       "use strict";
       var o = n(2),
-        i = ["age", "authorization", "content-length", "content-type", "etag", "expires", "from", "host", "if-modified-since", "if-unmodified-since", "last-modified", "location", "max-forwards", "proxy-authorization", "referer", "retry-after", "user-agent"];
+        s = ["age", "authorization", "content-length", "content-type", "etag", "expires", "from", "host", "if-modified-since", "if-unmodified-since", "last-modified", "location", "max-forwards", "proxy-authorization", "referer", "retry-after", "user-agent"];
       e.exports = function(e) {
         var t, n, a, r = {};
         return e && o.forEach(e.split("\n"), function(e) {
           if (a = e.indexOf(":"), t = o.trim(e.substr(0, a)).toLowerCase(), n = o.trim(e.substr(a + 1)), t) {
-            if (r[t] && 0 <= i.indexOf(t)) return;
+            if (r[t] && 0 <= s.indexOf(t)) return;
             r[t] = "set-cookie" === t ? (r[t] ? r[t] : []).concat([n]) : r[t] ? r[t] + ", " + n : n
           }
         }), r
       }
     }, function(e, t, n) {
       "use strict";
-      var i = n(2);
-      e.exports = i.isStandardBrowserEnv() ? function() {
+      var s = n(2);
+      e.exports = s.isStandardBrowserEnv() ? function() {
         function n(e) {
           var t = e;
           return r && (o.setAttribute("href", t), t = o.href), o.setAttribute("href", t), {
@@ -1628,7 +1628,7 @@ function Http() {
           o = document.createElement("a");
         return a = n(window.location.href),
           function(e) {
-            var t = i.isString(e) ? n(e) : e;
+            var t = s.isString(e) ? n(e) : e;
             return t.protocol === a.protocol && t.host === a.host
           }
       }() : function() {
@@ -1636,11 +1636,11 @@ function Http() {
       }
     }, function(e, t, n) {
       "use strict";
-      var s = n(2);
-      e.exports = s.isStandardBrowserEnv() ? {
+      var i = n(2);
+      e.exports = i.isStandardBrowserEnv() ? {
         write: function(e, t, n, a, r, o) {
-          var i = [];
-          i.push(e + "=" + encodeURIComponent(t)), s.isNumber(n) && i.push("expires=" + new Date(n).toGMTString()), s.isString(a) && i.push("path=" + a), s.isString(r) && i.push("domain=" + r), !0 === o && i.push("secure"), document.cookie = i.join("; ")
+          var s = [];
+          s.push(e + "=" + encodeURIComponent(t)), i.isNumber(n) && s.push("expires=" + new Date(n).toGMTString()), i.isString(a) && s.push("path=" + a), i.isString(r) && s.push("domain=" + r), !0 === o && s.push("secure"), document.cookie = s.join("; ")
         },
         read: function(e) {
           var t = document.cookie.match(new RegExp("(^|;\\s*)(" + e + ")=([^;]*)"));
@@ -1899,13 +1899,13 @@ function getBusinessType() {
     t.classList.add("send-recomendation-button--hide"), this.querySelector(".form-email").classList.add("form-email--show"), this.querySelector(".form-email input").focus()
   }
 
-  function i() {
+  function s() {
     var e = !(0 < arguments.length && void 0 !== arguments[0]) || arguments[0];
-    t.classList.remove("send-recomendation-button--hide"), document.querySelector(".form-email").classList.remove("form-email--show"), document.querySelector("#build-bundle .form-email input").value = "", t.removeEventListener("click", o.bind(t.closest(".bundle__action"))), t.addEventListener("click", o.bind(t.closest(".bundle__action"))), r.removeEventListener("click", s), r.addEventListener("click", s), r.innerText = "Send", e && document.querySelector(".modal__close").click()
+    t.classList.remove("send-recomendation-button--hide"), document.querySelector(".form-email").classList.remove("form-email--show"), document.querySelector("#build-bundle .form-email input").value = "", t.removeEventListener("click", o.bind(t.closest(".bundle__action"))), t.addEventListener("click", o.bind(t.closest(".bundle__action"))), r.removeEventListener("click", i), r.addEventListener("click", i), r.innerText = "Send", e && document.querySelector(".modal__close").click()
   }
 
-  function s() {
-    r.innerHTML = "...", r.removeEventListener("click", s);
+  function i() {
+    r.innerHTML = "...", r.removeEventListener("click", i);
     var e = document.querySelector("#build-bundle .form-email input").value;
     if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(String(e).toLowerCase())) {
       var t = localStorage.getItem("selectedFeatures") ? localStorage.getItem("selectedFeatures").split(",").filter(function(e) {
@@ -1937,15 +1937,15 @@ function getBusinessType() {
       }).join("&");
       fetch("https://script.google.com/macros/s/AKfycbwLXuqFaYIMVSuCB3CuSZb6uqa9HKERkYaAtMJmVvwzQrSYpLY/exec?".concat(a)).then(function() {
         document.querySelector("#build-bundle .form-email input");
-        r.innerHTML = "&check;", setTimeout(i, 1e3)
+        r.innerHTML = "&check;", setTimeout(s, 1e3)
       }), gtag("event", "click", {
         event_category: "email-dialog",
         event_label: "send",
         value: 1
       })
-    } else i(!1)
+    } else s(!1)
   }
-  t.addEventListener("click", o.bind(t.closest(".bundle__action"))), r.addEventListener("click", s), e.addEventListener("click", function() {
+  t.addEventListener("click", o.bind(t.closest(".bundle__action"))), r.addEventListener("click", i), e.addEventListener("click", function() {
     this.classList.add("buy-now--hide"), n.classList.add("contact-us--show"), gtag("event", "click", {
       event_category: "bundle",
       event_label: "build",
@@ -1989,13 +1989,13 @@ function() {
         a = void 0;
       try {
         for (var r, o = e[Symbol.iterator](); !(t = (r = o.next()).done); t = !0) {
-          var i = r.value;
-          (s = i).addEventListener("click", function() {
+          var s = r.value;
+          (i = s).addEventListener("click", function() {
             var e = this.closest("section.navigation"),
               t = this.querySelector(".menu__child"),
               n = document.querySelector(".menu__child--opened");
             t.classList.add("menu__child--opened"), e.classList.add("navigation__child--opened"), n && (n.classList.remove("menu__child--opened"), e.classList.remove("navigation__child--opened"))
-          }.bind(s))
+          }.bind(i))
         }
       } catch (e) {
         n = !0, a = e
@@ -2006,7 +2006,7 @@ function() {
           if (n) throw a
         }
       }
-      var s
+      var i
     }(a)
 }(), setEventSegmentItem(document.querySelectorAll(".segment a")), setEventSegmentOption(document.querySelectorAll(".business__type.option")), setEventOption(document.querySelectorAll(".subscription__type.option"));
 var selectedPiles = [],
@@ -2078,8 +2078,8 @@ function bannerCtaClicked() {
         a = void 0;
       try {
         for (var r, o = e[Symbol.iterator](); !(t = (r = o.next()).done); t = !0) {
-          var i = r.value;
-          s(i)
+          var s = r.value;
+          i(s)
         }
       } catch (e) {
         n = !0, a = e
@@ -2097,8 +2097,8 @@ function bannerCtaClicked() {
         a = void 0;
       try {
         for (var r, o = e[Symbol.iterator](); !(t = (r = o.next()).done); t = !0) {
-          var i = r.value;
-          u(i)
+          var s = r.value;
+          u(s)
         }
       } catch (e) {
         n = !0, a = e
@@ -2128,12 +2128,18 @@ function bannerCtaClicked() {
     }, 0)
   }
 
-  function s(e) {
+  function i(e) {
     e.removeEventListener("click", r), e.addEventListener("click", r.bind(e))
   }
 
   function r() {
-    this.classList.toggle("active");
+    selectedPiles = localStorage.getItem("selectedFeatures") ? localStorage.getItem("selectedFeatures").split(",").filter(function(e) {
+      return "" !== e
+    }) : [], selectedProducts = localStorage.getItem("selectedProducts") ? localStorage.getItem("selectedProducts").split(",").filter(function(e) {
+      return "" !== e
+    }) : [], selectedAddons = localStorage.getItem("selectedAddons") ? localStorage.getItem("selectedAddons").split(",").filter(function(e) {
+      return "" !== e
+    }) : [], this.classList.toggle("active");
     var n = this.innerText;
     if (this.classList.contains("active")) selectedPiles.push(n), gtag("event", "click", {
       event_category: "select-features",
@@ -2168,7 +2174,7 @@ function bannerCtaClicked() {
     }), localStorage.setItem("selectedSegment", this.dataset.value), d(), p()
   }
 
-  function i() {
+  function s() {
     gtag("event", "click", {
       event_category: "segments",
       event_label: this.value,
@@ -2192,8 +2198,8 @@ function bannerCtaClicked() {
           a = void 0;
         try {
           for (var r, o = e[Symbol.iterator](); !(t = (r = o.next()).done); t = !0) {
-            var i = r.value;
-            f(i)
+            var s = r.value;
+            f(s)
           }
         } catch (e) {
           n = !0, a = e
@@ -2244,10 +2250,10 @@ function bannerCtaClicked() {
     });
     document.querySelector(".inbundle__content").innerHTML = o;
     document.querySelectorAll(".recomendation-primary .recomendation-item--active").length;
-    var i = document.querySelector(".recomendation .summary"),
-      s = i.querySelector(".recomendation .recomendation__button");
-    i.classList.add("summary--show"), s.classList.remove("recomendation__button--disabled")
-  }(n = a).removeEventListener("change", i), n.addEventListener("change", i.bind(n)), document.querySelector("div.inbundle__content").addEventListener("click", function(e) {
+    var s = document.querySelector(".recomendation .summary"),
+      i = s.querySelector(".recomendation .recomendation__button");
+    s.classList.add("summary--show"), i.classList.remove("recomendation__button--disabled")
+  }(n = a).removeEventListener("change", s), n.addEventListener("change", s.bind(n)), document.querySelector("div.inbundle__content").addEventListener("click", function(e) {
     if ("LI" === e.target.parentNode.tagName || "LI" === e.target.tagName) {
       var t = "LI" === e.target.parentNode.tagName ? e.target.parentNode : e.target,
         n = document.querySelector(".recomendation .summary .summary__price strong"),
@@ -2270,15 +2276,15 @@ function bannerCtaClicked() {
             return knownAddons[e]
           })
         }),
-        i = document.querySelector(".inbundle__content");
-      i.innerHTML = o, d(), p()
+        s = document.querySelector(".inbundle__content");
+      s.innerHTML = o, d(), p()
     }
   })
 }(), document.querySelector(".recomendation .close-button").addEventListener("click", function() {
   var e = document.querySelector(".recomendation"),
     t = document.querySelector(".summary"),
     n = document.querySelectorAll(".solution li.active");
-  e.classList.remove("recomendation--open"), t.classList.remove("summary--show"), localStorage.clear(), Object.keys(n).map(function(e) {
+  e.classList.remove("recomendation--open"), t.classList.remove("summary--show"), localStorage.removeItem("selectedFeatures"), localStorage.removeItem("selectedProducts"), localStorage.removeItem("selectedAddons"), localStorage.removeItem("selectedTerm"), localStorage.removeItem("selectedSegment"), Object.keys(n).map(function(e) {
     n[e].classList.remove("active")
   }), gtag("event", "click", {
     event_category: "close-recommendations",
