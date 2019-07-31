@@ -652,7 +652,7 @@ function Http() {
           return t && a(e.prototype, t), n && a(e, n), e
         }
       }(),
-      k = function(e) {
+      S = function(e) {
         if (Array.isArray(e)) {
           for (var t = 0, n = Array(e.length); t < e.length; t++) n[t] = e[t];
           return n
@@ -691,7 +691,7 @@ function Http() {
           onClose: i,
           awaitCloseAnimation: g,
           disableFocus: h
-        }, 0 < a.length && this.registerTriggers.apply(this, k(a)), this.onClick = this.onClick.bind(this), this.onKeydown = this.onKeydown.bind(this)
+        }, 0 < a.length && this.registerTriggers.apply(this, S(a)), this.onClick = this.onClick.bind(this), this.onKeydown = this.onKeydown.bind(this)
       }
       return e(_, [{
         key: "registerTriggers",
@@ -765,7 +765,7 @@ function Http() {
         key: "getFocusableNodes",
         value: function() {
           var e = this.modal.querySelectorAll(t);
-          return Array.apply(void 0, k(e))
+          return Array.apply(void 0, S(e))
         }
       }, {
         key: "setFocusToFirstNode",
@@ -792,7 +792,7 @@ function Http() {
         var t, n, a, r = Object.assign({}, {
             openTrigger: "data-micromodal-trigger"
           }, e),
-          o = [].concat(k(document.querySelectorAll("[" + r.openTrigger + "]"))),
+          o = [].concat(S(document.querySelectorAll("[" + r.openTrigger + "]"))),
           s = (t = o, n = r.openTrigger, a = [], t.forEach(function(e) {
             var t = e.attributes[n].value;
             void 0 === a[t] && (a[t] = []), a[t].push(e)
@@ -804,7 +804,7 @@ function Http() {
           }(o, s))
           for (var i in s) {
             var l = s[i];
-            r.targetModal = i, r.triggers = [].concat(k(l)), new c(r)
+            r.targetModal = i, r.triggers = [].concat(S(l)), new c(r)
           }
       },
       show: function(e, t) {
@@ -892,7 +892,7 @@ function Http() {
         c = n.helperMissing,
         u = "function",
         d = n.blockHelperMissing,
-        p = "<span class='summary__bundle'>Bundle Contents:</span>\n<ul class='bundle-list'>\n";
+        p = "<span class='summary__bundle'>Product Selection:</span>\n<ul class='bundle-list'>\n";
       return s = null != (s = n.products || (null != t ? t.products : t)) ? s : c, i = {
         name: "products",
         hash: {},
@@ -2070,7 +2070,7 @@ function bannerCtaClicked() {
         n = document.querySelector(".recomendation .summary .summary__price .interval"),
         a = document.querySelector(".recomendation .summary .summary__price strong"),
         r = document.querySelector(".inbundle__content");
-      l() ? (t.innerText = "Monthly payment:", e.classList.remove("recomendation__content--annually"), n.innerText = "/mo*", a.innerText = c("monthly").toFixed(2), r.classList.remove("show-annually"), r.classList.add("show-monthly")) : e.classList.contains("recomendation__content--annually") || (t.innerText = "Annual payment:", e.classList.add("recomendation__content--annually"), n.innerText = "/year*", a.innerText = c("annually").toFixed(2), r.classList.remove("show-monthly"), r.classList.add("show-annually"))
+      l() ? (t.innerText = "Monthly payment:", e.classList.remove("recomendation__content--annually"), n.innerText = "/mo*", a.innerText = c("monthly").toFixed(2), r.classList.remove("show-annually"), r.classList.add("show-monthly"), u()) : e.classList.contains("recomendation__content--annually") || (t.innerText = "Annual payment:", e.classList.add("recomendation__content--annually"), n.innerText = "/year*", a.innerText = c("annually").toFixed(2), r.classList.remove("show-monthly"), r.classList.add("show-annually"), u())
     }.bind(t)),
     function(e) {
       var t = !0,
@@ -2098,7 +2098,7 @@ function bannerCtaClicked() {
       try {
         for (var r, o = e[Symbol.iterator](); !(t = (r = o.next()).done); t = !0) {
           var s = r.value;
-          u(s)
+          d(s)
         }
       } catch (e) {
         n = !0, a = e
@@ -2126,6 +2126,19 @@ function bannerCtaClicked() {
     return e.concat(n).reduce(function(e, t) {
       return e + t
     }, 0)
+  }
+
+  function u() {
+    var e = document.querySelector(".summary .summary__price"),
+      t = document.querySelector(".summary .summary__discount");
+    e.classList.remove("discount"), t.classList.remove("discount");
+    var n = selectedProducts.length + selectedAddons.length;
+    if (1 < n) {
+      e.classList.add("discount"), t.classList.add("discount");
+      var a = 2 === n ? .1 : 3 === n ? .15 : .2,
+        r = parseFloat(e.querySelector("strong").innerText) * (1 - a);
+      t.querySelector("strong").innerText = r.toFixed(2), t.querySelector(".interval").innerText = e.querySelector(".interval").innerText, t.querySelector(".percent").innerText = "".concat(100 * a, "% bundle discount applied")
+    }
   }
 
   function i(e) {
@@ -2159,10 +2172,10 @@ function bannerCtaClicked() {
     }
     localStorage.setItem("selectedFeatures", selectedPiles);
     var t = document.querySelector(".recomendation");
-    t.classList.contains("recomendation--open") || t.classList.add("recomendation--open"), d(), p()
+    t.classList.contains("recomendation--open") || t.classList.add("recomendation--open"), p(), f()
   }
 
-  function u(e) {
+  function d(e) {
     e.removeEventListener("click", o), e.addEventListener("click", o.bind(e))
   }
 
@@ -2171,7 +2184,7 @@ function bannerCtaClicked() {
       event_category: "segments",
       event_label: this.dataset.value,
       value: 1
-    }), localStorage.setItem("selectedSegment", this.dataset.value), d(), p()
+    }), localStorage.setItem("selectedSegment", this.dataset.value), p(), f()
   }
 
   function s() {
@@ -2179,10 +2192,10 @@ function bannerCtaClicked() {
       event_category: "segments",
       event_label: this.value,
       value: 1
-    }), localStorage.setItem("selectedSegment", this.value), d(), p()
+    }), localStorage.setItem("selectedSegment", this.value), p(), f()
   }
 
-  function d() {
+  function p() {
     var e = getRecommendations(getBusinessType(), selectedPiles);
     document.querySelector(".subscription__type.option input").value;
     e.productsEmpty = 0 === e.products.length, e.addonsEmpty = 0 === e.addons.length, e.hasAddons = !e.addonsEmpty, e.products = e.products.map(function(e) {
@@ -2199,7 +2212,7 @@ function bannerCtaClicked() {
         try {
           for (var r, o = e[Symbol.iterator](); !(t = (r = o.next()).done); t = !0) {
             var s = r.value;
-            f(s)
+            m(s)
           }
         } catch (e) {
           n = !0, a = e
@@ -2213,15 +2226,15 @@ function bannerCtaClicked() {
       }(document.querySelectorAll(".recomendation-solution .recomendation-item"))
   }
 
-  function p() {
+  function f() {
     document.querySelector(".recomendation__content").classList.add("recomendation__content--open")
   }
 
-  function f(e) {
-    e.removeEventListener("click", m), e.addEventListener("click", m.bind(e))
+  function m(e) {
+    e.removeEventListener("click", h), e.addEventListener("click", h.bind(e))
   }
 
-  function m(e) {
+  function h(e) {
     if ("learn" === e.target.className) return !0;
     var t = this.dataset.product,
       n = this.dataset.type,
@@ -2231,11 +2244,11 @@ function bannerCtaClicked() {
       return e !== t
     }), localStorage.setItem("selectedProducts", selectedProducts)) : "addon" === n && (selectedAddons = selectedAddons.filter(function(e) {
       return e !== t
-    }), localStorage.setItem("selectedAddons", selectedAddons)), l() ? (a.innerText = c("monthly").toFixed(2), r.classList.remove("show-annually"), r.classList.add("show-monthly")) : (a.innerText = c("annually").toFixed(2), r.classList.remove("show-monthly"), r.classList.add("show-annually")), gtag("event", "click", {
+    }), localStorage.setItem("selectedAddons", selectedAddons)), l() ? (a.innerText = c("monthly").toFixed(2), r.classList.remove("show-annually"), r.classList.add("show-monthly")) : (a.innerText = c("annually").toFixed(2), r.classList.remove("show-monthly"), r.classList.add("show-annually")), u(), gtag("event", "click", {
       event_category: "remove-from-bundle",
       event_label: t,
       value: 1
-    })) : (this.classList.add("recomendation-item--active"), "product" === n ? (selectedProducts.push(t), localStorage.setItem("selectedProducts", selectedProducts)) : "addon" === n && (selectedAddons.push(t), localStorage.setItem("selectedAddons", selectedAddons)), l() ? (a.innerText = c("monthly").toFixed(2), r.classList.remove("show-annually"), r.classList.add("show-monthly")) : (a.innerText = c("annually").toFixed(2), r.classList.remove("show-monthly"), r.classList.add("show-annually")), gtag("event", "click", {
+    })) : (this.classList.add("recomendation-item--active"), "product" === n ? (selectedProducts.push(t), localStorage.setItem("selectedProducts", selectedProducts)) : "addon" === n && (selectedAddons.push(t), localStorage.setItem("selectedAddons", selectedAddons)), l() ? (a.innerText = c("monthly").toFixed(2), r.classList.remove("show-annually"), r.classList.add("show-monthly")) : (a.innerText = c("annually").toFixed(2), r.classList.remove("show-monthly"), r.classList.add("show-annually")), u(), gtag("event", "click", {
       event_category: "add-to-bundle",
       event_label: t,
       value: 1
@@ -2267,7 +2280,7 @@ function bannerCtaClicked() {
         return e !== a
       }), localStorage.setItem("selectedProducts", selectedProducts)) : "addon" === r && (selectedAddons = selectedAddons.filter(function(e) {
         return e !== a
-      }), localStorage.setItem("selectedAddons", selectedAddons)), l() ? n.innerText = c("monthly").toFixed(2) : n.innerText = c("annually").toFixed(2);
+      }), localStorage.setItem("selectedAddons", selectedAddons)), l() ? n.innerText = c("monthly").toFixed(2) : n.innerText = c("annually").toFixed(2), u();
       var o = logMeIn.templates.inbundle({
           products: selectedProducts.map(function(e) {
             return knownProducts[e]
@@ -2277,7 +2290,7 @@ function bannerCtaClicked() {
           })
         }),
         s = document.querySelector(".inbundle__content");
-      s.innerHTML = o, d(), p()
+      s.innerHTML = o, p(), f()
     }
   })
 }(), document.querySelector(".recomendation .close-button").addEventListener("click", function() {
