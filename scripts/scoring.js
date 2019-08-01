@@ -29,7 +29,7 @@ const knownProducts = {
     'GoToMeeting': {
         name: 'GoToMeeting',
         description: 'Hold online meetings with up to 150 participants. With GoToMeeting, share screens and collaborate with HD video conferencing.',
-        startingAt: '$36.00',
+        startingAt: '$29.00',
         period: 'Per Month',
         priceDetails: 'Pro Package. 150 Participants',
         url: 'https://www.gotomeeting.com/?c_name=lmi&c_prod=g2m&c_cmp=products',

@@ -2488,6 +2488,14 @@ img {
   display: flex
 }
 
+#build-bundle .modal__close {
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none
+}
+
 #build-bundle .bundle__action {
   position: relative;
   height: 2.5rem;
