@@ -262,7 +262,7 @@ function Http() {
     var a = n(2).default;
     t.__esModule = !0;
     var p = n(4),
-      f = a(n(5));
+      m = a(n(5));
     t.default = function(e) {
       e.registerHelper("each", function(a, e) {
         function t(e, t, n) {
@@ -271,7 +271,7 @@ function Http() {
             blockParams: p.blockParams([a[e], e], [l + e, null])
           })
         }
-        if (!e) throw new f.default("Must pass iterator to #each");
+        if (!e) throw new m.default("Must pass iterator to #each");
         var r = e.fn,
           n = e.inverse,
           o = 0,
@@ -418,7 +418,7 @@ function Http() {
     function p(e, t, n, a, r, o) {
       if (e.decorator) {
         var s = {};
-        t = e.decorator(t, s, n, a && a[0], r, o, a), f.extend(t, s)
+        t = e.decorator(t, s, n, a && a[0], r, o, a), m.extend(t, s)
       }
       return t
     }
@@ -432,9 +432,9 @@ function Http() {
         if (t < n) {
           var a = h.REVISION_CHANGES[n],
             r = h.REVISION_CHANGES[t];
-          throw new m.default("Template was precompiled with an older version of Handlebars than the current runtime. Please update your precompiler to a newer version (" + a + ") or downgrade your runtime to an older version (" + r + ").")
+          throw new f.default("Template was precompiled with an older version of Handlebars than the current runtime. Please update your precompiler to a newer version (" + a + ") or downgrade your runtime to an older version (" + r + ").")
         }
-        throw new m.default("Template was precompiled with a newer version of Handlebars than the current runtime. Please update your runtime to a newer version (" + e[1] + ").")
+        throw new f.default("Template was precompiled with a newer version of Handlebars than the current runtime. Please update your runtime to a newer version (" + e[1] + ").")
       }
     }, t.template = function(l, i) {
       function c(e) {
@@ -448,12 +448,12 @@ function Http() {
           i = l.useBlockParams ? [] : void 0;
         return l.useDepths && (s = r.depths ? e != r.depths[0] ? [e].concat(r.depths) : r.depths : [e]), (t = p(l.main, t, u, r.depths || [], o, i))(e, r)
       }
-      if (!i) throw new m.default("No environment passed to template");
-      if (!l || !l.main) throw new m.default("Unknown template object: " + typeof l);
+      if (!i) throw new f.default("No environment passed to template");
+      if (!l || !l.main) throw new f.default("Unknown template object: " + typeof l);
       l.main.decorator = l.main_d, i.VM.checkRevision(l.compiler);
       var u = {
         strict: function(e, t) {
-          if (!(t in e)) throw new m.default('"' + t + '" not defined in ' + e);
+          if (!(t in e)) throw new f.default('"' + t + '" not defined in ' + e);
           return e[t]
         },
         lookup: function(e, t) {
@@ -463,11 +463,11 @@ function Http() {
         lambda: function(e, t) {
           return "function" == typeof e ? e.call(t) : e
         },
-        escapeExpression: f.escapeExpression,
+        escapeExpression: m.escapeExpression,
         invokePartial: function(e, t, n) {
-          n.hash && (t = f.extend({}, t, n.hash), n.ids && (n.ids[0] = !0)), e = i.VM.resolvePartial.call(this, e, t, n);
+          n.hash && (t = m.extend({}, t, n.hash), n.ids && (n.ids[0] = !0)), e = i.VM.resolvePartial.call(this, e, t, n);
           var a = i.VM.invokePartial.call(this, e, t, n);
-          if (null == a && i.compile && (n.partials[n.name] = i.compile(e, l.compilerOptions, i), a = n.partials[n.name](t, n)), null == a) throw new m.default("The partial " + n.name + " could not be compiled when running in runtime-only mode");
+          if (null == a && i.compile && (n.partials[n.name] = i.compile(e, l.compilerOptions, i), a = n.partials[n.name](t, n)), null == a) throw new f.default("The partial " + n.name + " could not be compiled when running in runtime-only mode");
           if (n.indent) {
             for (var r = a.split("\n"), o = 0, s = r.length; o < s && (r[o] || o + 1 !== s); o++) r[o] = n.indent + r[o];
             a = r.join("\n")
@@ -490,7 +490,7 @@ function Http() {
         },
         merge: function(e, t) {
           var n = e || t;
-          return e && t && e !== t && (n = f.extend({}, t, e)), n
+          return e && t && e !== t && (n = m.extend({}, t, e)), n
         },
         nullContext: a({}),
         noop: i.VM.noop,
@@ -499,8 +499,8 @@ function Http() {
       return c.isTop = !0, c._setup = function(e) {
         e.partial ? (u.helpers = e.helpers, u.partials = e.partials, u.decorators = e.decorators) : (u.helpers = u.merge(e.helpers, i.helpers), l.usePartial && (u.partials = u.merge(e.partials, i.partials)), (l.usePartial || l.useDecorators) && (u.decorators = u.merge(e.decorators, i.decorators)))
       }, c._child = function(e, t, n, a) {
-        if (l.useBlockParams && !n) throw new m.default("must pass block params");
-        if (l.useDepths && !a) throw new m.default("must pass parent depths");
+        if (l.useBlockParams && !n) throw new f.default("must pass block params");
+        if (l.useDepths && !a) throw new f.default("must pass parent depths");
         return d(u, e, l[e], t, 0, n, a)
       }, c
     }, t.wrapProgram = d, t.resolvePartial = function(e, t, n) {
@@ -515,12 +515,12 @@ function Http() {
           o = a.data["partial-block"] = function(e) {
             var t = arguments.length <= 1 || void 0 === arguments[1] ? {} : arguments[1];
             return t.data = h.createFrame(t.data), t.data["partial-block"] = r, n(e, t)
-          }, n.partials && (a.partials = f.extend({}, a.partials, n.partials))
-        }(), void 0 === e && o && (e = o), void 0 === e) throw new m.default("The partial " + a.name + " could not be found");
+          }, n.partials && (a.partials = m.extend({}, a.partials, n.partials))
+        }(), void 0 === e && o && (e = o), void 0 === e) throw new f.default("The partial " + a.name + " could not be found");
       if (e instanceof Function) return e(t, a)
     }, t.noop = s;
-    var f = r(n(4)),
-      m = o(n(5)),
+    var m = r(n(4)),
+      f = o(n(5)),
       h = n(3)
   }, function(e, t, n) {
     e.exports = {
@@ -552,7 +552,7 @@ function Http() {
       }), "Object", a)
     }
   }, function(e, t, n) {
-    var m = n(28),
+    var f = n(28),
       h = n(29),
       v = n(30),
       g = "prototype",
@@ -564,8 +564,8 @@ function Http() {
           u = e & y.B,
           d = e & y.W,
           p = i ? h : h[t] || (h[t] = {}),
-          f = i ? m : l ? m[t] : (m[t] || {})[g];
-        for (a in i && (n = t), n)(r = !s && f && a in f) && a in p || (o = r ? f[a] : n[a], p[a] = i && "function" != typeof f[a] ? n[a] : u && r ? v(o, m) : d && f[a] == o ? function(t) {
+          m = i ? f : l ? f[t] : (f[t] || {})[g];
+        for (a in i && (n = t), n)(r = !s && m && a in m) && a in p || (o = r ? m[a] : n[a], p[a] = i && "function" != typeof m[a] ? n[a] : u && r ? v(o, f) : d && m[a] == o ? function(t) {
           var e = function(e) {
             return this instanceof t ? new t(e) : t(e)
           };
@@ -673,9 +673,9 @@ function Http() {
           u = e.closeTrigger,
           d = void 0 === u ? "data-micromodal-close" : u,
           p = e.disableScroll,
-          f = void 0 !== p && p,
-          m = e.disableFocus,
-          h = void 0 !== m && m,
+          m = void 0 !== p && p,
+          f = e.disableFocus,
+          h = void 0 !== f && f,
           v = e.awaitCloseAnimation,
           g = void 0 !== v && v,
           y = e.debugMode,
@@ -684,7 +684,7 @@ function Http() {
           if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
         })(this, _), this.modal = document.getElementById(t), this.config = {
           debugMode: b,
-          disableScroll: f,
+          disableScroll: m,
           openTrigger: c,
           closeTrigger: d,
           onShow: o,
@@ -1176,7 +1176,7 @@ function Http() {
         u = n.helperMissing,
         d = "function",
         p = n.blockHelperMissing,
-        f = '<h4>Recommendations:</h4>\n<ul class="recomendation-solution recomendation-primary">\n';
+        m = '<h4>Recommendations:</h4>\n<ul class="recomendation-solution recomendation-primary">\n';
       return i = null != (i = n.productsEmpty || (null != t ? t.productsEmpty : t)) ? i : u, l = {
         name: "productsEmpty",
         hash: {},
@@ -1184,7 +1184,7 @@ function Http() {
         inverse: e.noop,
         data: r,
         blockParams: o
-      }, s = typeof i === d ? i.call(c, l) : i, n.productsEmpty || (s = p.call(t, s, l)), null != s && (f += s), f += (null != (s = n.each.call(c, null != t ? t.products : t, {
+      }, s = typeof i === d ? i.call(c, l) : i, n.productsEmpty || (s = p.call(t, s, l)), null != s && (m += s), m += (null != (s = n.each.call(c, null != t ? t.products : t, {
         name: "each",
         hash: {},
         fn: e.program(3, r, 0, o),
@@ -1198,7 +1198,7 @@ function Http() {
         inverse: e.noop,
         data: r,
         blockParams: o
-      }, s = typeof i === d ? i.call(c, l) : i, n.hasAddons || (s = p.call(t, s, l)), null != s && (f += s), f
+      }, s = typeof i === d ? i.call(c, l) : i, n.hasAddons || (s = p.call(t, s, l)), null != s && (m += s), m
     },
     useData: !0,
     useBlockParams: !0
@@ -1511,8 +1511,8 @@ function Http() {
       "use strict";
       var d = u(2),
         p = u(14),
-        f = u(6),
-        m = u(17),
+        m = u(6),
+        f = u(17),
         h = u(18),
         v = u(15);
       e.exports = function(c) {
@@ -1526,9 +1526,9 @@ function Http() {
               t = c.auth.password || "";
             o.Authorization = "Basic " + btoa(e + ":" + t)
           }
-          if (s.open(c.method.toUpperCase(), f(c.url, c.params, c.paramsSerializer), !0), s.timeout = c.timeout, s.onreadystatechange = function() {
+          if (s.open(c.method.toUpperCase(), m(c.url, c.params, c.paramsSerializer), !0), s.timeout = c.timeout, s.onreadystatechange = function() {
               if (s && 4 === s.readyState && (0 !== s.status || s.responseURL && 0 === s.responseURL.indexOf("file:"))) {
-                var e = "getAllResponseHeaders" in s ? m(s.getAllResponseHeaders()) : null,
+                var e = "getAllResponseHeaders" in s ? f(s.getAllResponseHeaders()) : null,
                   t = {
                     data: c.responseType && "text" !== c.responseType ? s.response : s.responseText,
                     status: s.status,
@@ -1892,16 +1892,18 @@ function getBusinessType() {
   var t = document.querySelector("#build-bundle .send-recomendation-button"),
     r = document.querySelector("#build-bundle .send-button"),
     e = document.querySelector("#build-bundle .buy-now"),
-    n = document.querySelector("#build-bundle .contact-us"),
-    a = document.querySelector(".modal__close");
+    n = document.querySelector("#build-bundle .contact-me"),
+    u = document.querySelector("#build-bundle .contact-me .contact"),
+    a = document.querySelector("#build-bundle .thank-you"),
+    o = document.querySelector(".modal__close");
 
-  function o() {
+  function s() {
     t.classList.add("send-recomendation-button--hide"), this.querySelector(".form-email").classList.add("form-email--show"), this.querySelector(".form-email input").focus()
   }
 
-  function s() {
+  function d() {
     var e = !(0 < arguments.length && void 0 !== arguments[0]) || arguments[0];
-    t.classList.remove("send-recomendation-button--hide"), document.querySelector(".form-email").classList.remove("form-email--show"), document.querySelector("#build-bundle .form-email input").value = "", t.removeEventListener("click", o.bind(t.closest(".bundle__action"))), t.addEventListener("click", o.bind(t.closest(".bundle__action"))), r.removeEventListener("click", i), r.addEventListener("click", i), r.innerText = "Send", e && document.querySelector(".modal__close").click()
+    t.classList.remove("send-recomendation-button--hide"), document.querySelector(".form-email").classList.remove("form-email--show"), document.querySelector("#build-bundle .form-email input").value = "", t.removeEventListener("click", s.bind(t.closest(".bundle__action"))), t.addEventListener("click", s.bind(t.closest(".bundle__action"))), r.removeEventListener("click", i), r.addEventListener("click", i), r.innerText = "Send", e && document.querySelector(".modal__close").click()
   }
 
   function i() {
@@ -1922,7 +1924,9 @@ function getBusinessType() {
             return "" !== e
           }) : [],
           price: document.querySelector(".summary span.summary__price strong").innerText,
-          term: localStorage.getItem("selectedTerm") ? localStorage.getItem("selectedTerm") : "monthly"
+          term: localStorage.getItem("selectedTerm") ? localStorage.getItem("selectedTerm") : "monthly",
+          fullname: "",
+          phone: ""
         };
       fetch("https://us-central1-bundleit-02210.cloudfunctions.net/api/addQuote", {
         method: "post",
@@ -1937,32 +1941,80 @@ function getBusinessType() {
       }).join("&");
       fetch("https://script.google.com/macros/s/AKfycbwLXuqFaYIMVSuCB3CuSZb6uqa9HKERkYaAtMJmVvwzQrSYpLY/exec?".concat(a)).then(function() {
         document.querySelector("#build-bundle .form-email input");
-        r.innerHTML = "&check;", setTimeout(s, 1e3)
+        r.innerHTML = "&check;", setTimeout(d, 1e3)
       }), gtag("event", "click", {
         event_category: "email-dialog",
         event_label: "send",
         value: 1
       })
-    } else s(!1)
+    } else d(!1)
   }
-  t.addEventListener("click", o.bind(t.closest(".bundle__action"))), r.addEventListener("click", i), e.addEventListener("click", function() {
-    this.classList.add("buy-now--hide"), n.classList.add("contact-us--show"), gtag("event", "click", {
+  t.addEventListener("click", s.bind(t.closest(".bundle__action"))), r.addEventListener("click", i), e.addEventListener("click", function() {
+    this.classList.remove("show"), n.classList.add("show"), a.classList.remove("show"), gtag("event", "click", {
       event_category: "bundle",
       event_label: "build",
       value: 1
     })
-  }), a.addEventListener("click", function() {
-    e.classList.remove("buy-now--hide"), n.classList.remove("contact-us--show"), gtag("event", "click", {
+  }), o.addEventListener("click", function() {
+    e.classList.add("show"), n.classList.remove("show"), a.classList.remove("show"), gtag("event", "click", {
       event_category: "email-dialog",
       event_label: "close",
       value: 1
     })
-  }), n.addEventListener("click", function() {
-    gtag("event", "click", {
-      event_category: "email-dialog",
-      event_label: "contact",
-      value: 1
-    })
+  }), u.addEventListener("click", function() {
+    e.classList.remove("show"), n.classList.remove("show"),
+      function() {
+        u.innerHTML = "...";
+        var e = document.querySelector('#build-bundle .contact-me input[name="cust-name"]').value,
+          t = document.querySelector('#build-bundle .contact-me input[name="cust-phone"]').value;
+        if ("" === e || "" === t) return;
+        var n = localStorage.getItem("selectedFeatures") ? localStorage.getItem("selectedFeatures").split(",").filter(function(e) {
+            return "" !== e
+          }) : [],
+          a = localStorage.getItem("selectedSegment") ? localStorage.getItem("selectedSegment") : "Small Business",
+          r = localStorage.getItem("selectedProducts") ? localStorage.getItem("selectedProducts").split(",").filter(function(e) {
+            return "" !== e
+          }) : [],
+          o = localStorage.getItem("selectedAddons") ? localStorage.getItem("selectedAddons").split(",").filter(function(e) {
+            return "" !== e
+          }) : [],
+          s = document.querySelector(".summary span.summary__price strong").innerText,
+          i = localStorage.getItem("selectedTerm") ? localStorage.getItem("selectedTerm") : "monthly",
+          l = {
+            fullname: e,
+            phone: t,
+            email: "",
+            businessType: a,
+            features: n,
+            products: r,
+            addons: o,
+            price: s,
+            term: i
+          };
+        fetch("https://us-central1-bundleit-02210.cloudfunctions.net/api/addQuote", {
+          method: "post",
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-type": "application/json"
+          },
+          body: JSON.stringify(l)
+        });
+        var c = Object.entries(l).map(function(e) {
+          return e.join("=")
+        }).join("&");
+        fetch("https://script.google.com/macros/s/AKfycbwLXuqFaYIMVSuCB3CuSZb6uqa9HKERkYaAtMJmVvwzQrSYpLY/exec?".concat(c)).then(function() {
+          document.querySelector("#build-bundle .form-email input");
+          u.innerHTML = "&check;", setTimeout(d, 1e3)
+        }), gtag("event", "click", {
+          event_category: "email-dialog",
+          event_label: "lead",
+          value: 1
+        })
+      }(), a.classList.add("show"), gtag("event", "click", {
+        event_category: "email-dialog",
+        event_label: "contact",
+        value: 1
+      })
   })
 }(),
 function() {
@@ -2172,7 +2224,7 @@ function bannerCtaClicked() {
     }
     localStorage.setItem("selectedFeatures", selectedPiles);
     var t = document.querySelector(".recomendation");
-    t.classList.contains("recomendation--open") || t.classList.add("recomendation--open"), p(), f()
+    t.classList.contains("recomendation--open") || t.classList.add("recomendation--open"), p(), m()
   }
 
   function d(e) {
@@ -2184,7 +2236,7 @@ function bannerCtaClicked() {
       event_category: "segments",
       event_label: this.dataset.value,
       value: 1
-    }), localStorage.setItem("selectedSegment", this.dataset.value), p(), f()
+    }), localStorage.setItem("selectedSegment", this.dataset.value), p(), m()
   }
 
   function s() {
@@ -2192,7 +2244,7 @@ function bannerCtaClicked() {
       event_category: "segments",
       event_label: this.value,
       value: 1
-    }), localStorage.setItem("selectedSegment", this.value), p(), f()
+    }), localStorage.setItem("selectedSegment", this.value), p(), m()
   }
 
   function p() {
@@ -2212,7 +2264,7 @@ function bannerCtaClicked() {
         try {
           for (var r, o = e[Symbol.iterator](); !(t = (r = o.next()).done); t = !0) {
             var s = r.value;
-            m(s)
+            f(s)
           }
         } catch (e) {
           n = !0, a = e
@@ -2226,11 +2278,11 @@ function bannerCtaClicked() {
       }(document.querySelectorAll(".recomendation-solution .recomendation-item"))
   }
 
-  function f() {
+  function m() {
     document.querySelector(".recomendation__content").classList.add("recomendation__content--open")
   }
 
-  function m(e) {
+  function f(e) {
     e.removeEventListener("click", h), e.addEventListener("click", h.bind(e))
   }
 
@@ -2290,7 +2342,7 @@ function bannerCtaClicked() {
           })
         }),
         s = document.querySelector(".inbundle__content");
-      s.innerHTML = o, p(), f()
+      s.innerHTML = o, p(), m()
     }
   })
 }(), document.querySelector(".recomendation .close-button").addEventListener("click", function() {
