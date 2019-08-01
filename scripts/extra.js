@@ -45,16 +45,30 @@ function slackEventNotification() {
         segments[key].addEventListener('click', buttonClicked)
     })
 
+    let contactButton = document.querySelector('#build-bundle .contact-me .contact')
+    contactButton.removeEventListener('click', contactButtonClicked)
+    contactButton.addEventListener('click', contactButtonClicked)
+
+    function contactButtonClicked() {
+        let fullname = document.querySelector('#build-bundle .contact-me input[name="cust-name"]').value
+        let phone = document.querySelector('#build-bundle .contact-me input[name="cust-phone"]').value
+        sendToSlack(`:moneybag: | Lead name: ${fullname} phone: ${phone}  `)
+    }
+
     function buttonClicked() {
-          if (this.classList.contains('active') || this.classList.contains('selected')) {
-            fetch('https://hooks.slack.com/services/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', {
-                method: 'post',
-                headers: {
-                  'Accept': 'application/json, text/plain, */*',
-                  'Content-type': 'application/x-www-form-urlencoded'
-                },
-                body: JSON.stringify({text: `${emoji} | ${this.innerText}`})
-            })
-          }
+        if (this.classList.contains('active') || this.classList.contains('selected')) {
+            sendToSlack(`${emoji} | ${this.innerText}`)
+        }
+    }
+
+    function sendToSlack(message) {
+      fetch('https://hooks.slack.com/services/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', {
+          method: 'post',
+          headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-type': 'application/x-www-form-urlencoded'
+          },
+          body: JSON.stringify({text: message})
+      })
     }
 }
