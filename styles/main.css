@@ -442,7 +442,7 @@ img {
   border-bottom: 2px solid #165c7d
 }
 
-#build-bundle .contact-us, .button, .recomendation .recomendation__button {
+#build-bundle .contact-me .contact, .button, .recomendation .recomendation__button {
   display: block;
   padding: .6rem .8rem;
   background-color: #93cc0b;
@@ -470,7 +470,7 @@ img {
   border-radius: .5rem
 }
 
-#build-bundle .contact-us, #build-bundle .form-email, #build-bundle .form-email input, .button--round-full, .navigation .menu .recomendation a.recomendation__button, .navigation .menu a.button, .recomendation .navigation .menu a.recomendation__button, .recomendation .recomendation__button, .recomendation .secondary-cta .cta>.recomendation__button, .secondary-cta .cta>.button, .secondary-cta .recomendation .cta>.recomendation__button {
+#build-bundle .contact-me .contact, #build-bundle .contact-me input, #build-bundle .form-email, #build-bundle .form-email input, .button--round-full, .navigation .menu .recomendation a.recomendation__button, .navigation .menu a.button, .recomendation .navigation .menu a.recomendation__button, .recomendation .recomendation__button, .recomendation .secondary-cta .cta>.recomendation__button, .secondary-cta .cta>.button, .secondary-cta .recomendation .cta>.recomendation__button {
   border-radius: 9999px
 }
 
@@ -738,7 +738,7 @@ img {
   justify-content: center
 }
 
-#build-bundle .navigation .menu--show a.contact-us, .navigation .menu--show #build-bundle a.contact-us, .navigation .menu--show .recomendation a.recomendation__button, .navigation .menu--show a.button, .recomendation .navigation .menu--show a.recomendation__button {
+#build-bundle .contact-me .navigation .menu--show a.contact, .navigation .menu--show #build-bundle .contact-me a.contact, .navigation .menu--show .recomendation a.recomendation__button, .navigation .menu--show a.button, .recomendation .navigation .menu--show a.recomendation__button {
   max-width: 80%
 }
 
@@ -834,11 +834,11 @@ img {
   }
 }
 
-#build-bundle .navigation .menu a.contact-us, .navigation .menu #build-bundle a.contact-us, .navigation .menu .recomendation a.recomendation__button, .navigation .menu a.button, .recomendation .navigation .menu a.recomendation__button {
+#build-bundle .contact-me .navigation .menu a.contact, .navigation .menu #build-bundle .contact-me a.contact, .navigation .menu .recomendation a.recomendation__button, .navigation .menu a.button, .recomendation .navigation .menu a.recomendation__button {
   color: #fff
 }
 
-#build-bundle .navigation .menu a.contact-us:hover, .navigation .menu #build-bundle a.contact-us:hover, .navigation .menu .recomendation a.recomendation__button:hover, .navigation .menu a.button:hover, .recomendation .navigation .menu a.recomendation__button:hover {
+#build-bundle .contact-me .navigation .menu a.contact:hover, .navigation .menu #build-bundle .contact-me a.contact:hover, .navigation .menu .recomendation a.recomendation__button:hover, .navigation .menu a.button:hover, .recomendation .navigation .menu a.recomendation__button:hover {
   background-color: #76a624
 }
 
@@ -1655,13 +1655,22 @@ img {
   padding: 1rem 36px
 }
 
+.recomendation .summary .summary__price {
+  font-size: 24px
+}
+
 .recomendation .summary .summary__price.discount {
   text-decoration: line-through;
   color: hsla(0, 0%, 100%, .2)
 }
 
-.recomendation .summary .summary__discount {
+.recomendation .summary .summary__price.discount .interval {
   display: none
+}
+
+.recomendation .summary .summary__discount {
+  display: none;
+  font-size: 24px
 }
 
 .recomendation .summary .summary__discount.discount {
@@ -2216,7 +2225,7 @@ img {
   }
 }
 
-#build-bundle .secondary-cta .cta>.contact-us, .recomendation .secondary-cta .cta>.recomendation__button, .secondary-cta #build-bundle .cta>.contact-us, .secondary-cta .cta>.button.button, .secondary-cta .recomendation .cta>.recomendation__button {
+#build-bundle .contact-me .secondary-cta .cta>.contact, .recomendation .secondary-cta .cta>.recomendation__button, .secondary-cta #build-bundle .contact-me .cta>.contact, .secondary-cta .cta>.button.button, .secondary-cta .recomendation .cta>.recomendation__button {
   color: #fff;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -2247,7 +2256,7 @@ img {
   -webkit-box-pack: center
 }
 
-#build-bundle .secondary-cta .cta>.contact-us:hover, .recomendation .secondary-cta .cta>.recomendation__button:hover, .secondary-cta #build-bundle .cta>.contact-us:hover, .secondary-cta .cta>.button.button:hover, .secondary-cta .recomendation .cta>.recomendation__button:hover {
+#build-bundle .contact-me .secondary-cta .cta>.contact:hover, .recomendation .secondary-cta .cta>.recomendation__button:hover, .secondary-cta #build-bundle .contact-me .cta>.contact:hover, .secondary-cta .cta>.button.button:hover, .secondary-cta .recomendation .cta>.recomendation__button:hover {
   background-color: #76a624
 }
 
@@ -2469,6 +2478,16 @@ img {
   position: relative
 }
 
+#build-bundle .modal__footer div {
+  display: none
+}
+
+#build-bundle .modal__footer div.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+}
+
 #build-bundle .bundle__action {
   position: relative;
   height: 2.5rem;
@@ -2477,14 +2496,16 @@ img {
 
 #build-bundle .send-recomendation-button {
   width: 226px;
-  height: 32px;
+  height: auto;
   margin: 0 auto;
   border: 2px solid #c8c7c6;
   background-color: #fff;
   position: relative;
   z-index: 2;
   color: #53565a;
-  cursor: pointer
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700
 }
 
 #build-bundle .send-recomendation-button--hide {
@@ -2540,6 +2561,9 @@ img {
 }
 
 #build-bundle .form-email a {
+  font-size: 14px;
+  padding: 4px 30px;
+  margin: 4px 0;
   visibility: hidden;
   cursor: pointer
 }
@@ -2592,22 +2616,53 @@ img {
   animation-timing-function: ease-out
 }
 
-#build-bundle .contact-us {
-  text-decoration: none;
-  background-color: #165c7d;
-  padding: .25rem 3rem;
-  display: none;
-  font-size: 1rem;
-  position: absolute;
-  margin: 0
+#build-bundle .contact-me {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-animation: zoomIn;
+  animation: zoomIn;
+  -webkit-animation-duration: .1s;
+  animation-duration: .1s;
+  -webkit-animation-delay: .2s;
+  animation-delay: .2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in
 }
 
-#build-bundle .contact-us:hover {
+#build-bundle .contact-me input {
+  font-size: 14px;
+  border: 2px solid #c8c7c6;
+  padding: 10px 15px;
+  margin: 0 10px;
+  width: 180px;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none
+}
+
+#build-bundle .contact-me .contact {
+  text-decoration: none;
+  background-color: #165c7d;
+  font-size: 14px;
+  padding: 10px 25px;
+  margin: 0 10px
+}
+
+#build-bundle .contact-me .contact:hover {
   background-color: #0f4760
 }
 
-#build-bundle .contact-us--show {
-  display: block;
+#build-bundle .thank-you {
+  color: #165c7d;
+  font-weight: 700;
+  margin-right: 1rem;
   -webkit-animation: zoomIn;
   animation: zoomIn;
   -webkit-animation-duration: .1s;
