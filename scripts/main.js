@@ -989,7 +989,7 @@ function Http() {
         inverse: e.noop,
         data: r,
         blockParams: o
-      })) ? s : "") + '    </div>\n    <img srcset="' + d(typeof(i = null != (i = n.logo || (null != t ? t.logo : t)) ? i : c) === u ? i.call(l, {
+      })) ? s : "") + '    </div>\n    <div>\n      <img srcset="' + d(typeof(i = null != (i = n.logo || (null != t ? t.logo : t)) ? i : c) === u ? i.call(l, {
         name: "logo",
         hash: {},
         data: r,
@@ -999,7 +999,7 @@ function Http() {
         hash: {},
         data: r,
         blockParams: o
-      }) : i) + '" class="product-recomendation">\n    <p><span class="product-title">' + d(typeof(i = null != (i = n.name || (null != t ? t.name : t)) ? i : c) === u ? i.call(l, {
+      }) : i) + '" class="product-recomendation">\n    </div>\n    <p><span class="product-title">' + d(typeof(i = null != (i = n.name || (null != t ? t.name : t)) ? i : c) === u ? i.call(l, {
         name: "name",
         hash: {},
         data: r,
@@ -1103,7 +1103,7 @@ function Http() {
         inverse: e.noop,
         data: r,
         blockParams: o
-      })) ? s : "") + '    </div>\n    <img srcset="' + d(typeof(i = null != (i = n.logo || (null != t ? t.logo : t)) ? i : c) === u ? i.call(l, {
+      })) ? s : "") + '    </div>\n    <div>\n      <img srcset="' + d(typeof(i = null != (i = n.logo || (null != t ? t.logo : t)) ? i : c) === u ? i.call(l, {
         name: "logo",
         hash: {},
         data: r,
@@ -1113,7 +1113,7 @@ function Http() {
         hash: {},
         data: r,
         blockParams: o
-      }) : i) + '" class="product-recomendation">\n    <p><span class="product-title">' + d(typeof(i = null != (i = n.name || (null != t ? t.name : t)) ? i : c) === u ? i.call(l, {
+      }) : i) + '" class="product-recomendation">      \n    </div>\n    <p><span class="product-title">' + d(typeof(i = null != (i = n.name || (null != t ? t.name : t)) ? i : c) === u ? i.call(l, {
         name: "name",
         hash: {},
         data: r,
