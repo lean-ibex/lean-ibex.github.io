@@ -865,8 +865,8 @@ img {
     height: 320px;
     width: 700px;
     left: auto;
-    padding-bottom: 0;
-    border: 1px solid #97999b;
+    padding: 20px 5px 5px 10px;
+    border: none;
     z-index: 1;
     border-radius: .25rem;
     -webkit-box-orient: vertical;
@@ -875,7 +875,9 @@ img {
     flex-direction: column;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    overflow: visible
+    overflow: visible;
+    -webkit-box-shadow: 0 10px 20px rgba(68, 68, 68, .4);
+    box-shadow: 0 10px 20px rgba(68, 68, 68, .4)
   }
 }
 
@@ -978,7 +980,8 @@ img {
 }
 
 .hero__information h1 {
-  line-height: 60px
+  line-height: 60px;
+  margin: .67em 0 .5em
 }
 
 .hero__information a {
@@ -1302,7 +1305,9 @@ img {
 
 .usecase .usecase_information ul li {
   padding-left: 1.5em;
-  position: relative
+  position: relative;
+  line-height: 20px;
+  padding-bottom: 10px
 }
 
 .usecase .usecase_information ul li:before {
@@ -1378,7 +1383,8 @@ img {
 @media only screen and (min-width:641px) {
   .usecase .usecase_information img.img-hero {
     width: 500px;
-    height: auto
+    height: auto;
+    margin: 0 auto
   }
 
   .usecase .usecase_information div.row {
@@ -1655,6 +1661,20 @@ img {
   padding: 1rem 36px
 }
 
+@media only screen and (min-width:641px) {
+  .recomendation .summary .container, .recomendation .summary .description, .recomendation .summary .footer__menu, .recomendation .summary .footer__socmed, .recomendation .summary .recomendation-solution {
+    min-width: 768;
+    max-width: 1200;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+  }
+}
+
 .recomendation .summary .summary__price {
   font-size: 24px
 }
@@ -1791,7 +1811,7 @@ img {
 
 @media only screen and (min-width:641px) {
   .recomendation .recomendation__button {
-    margin-top: 0;
+    margin-top: 8px;
     margin-left: 2rem;
     -ms-flex-item-align: center;
     align-self: center
@@ -1965,7 +1985,8 @@ img {
 @media only screen and (min-width:641px) {
   .recomendation .recomendation-solution {
     min-width: 768px;
-    max-width: 1200px
+    max-width: 1200px;
+    padding: 1rem 0
   }
 }
 
@@ -1996,8 +2017,9 @@ img {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
@@ -2031,7 +2053,8 @@ img {
 .recomendation .recomendation-item p {
   font-size: 14px;
   color: #75787b;
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
+  margin-top: 0
 }
 
 .recomendation .recomendation-item .tag {
@@ -2041,6 +2064,10 @@ img {
   margin: 0 .25rem;
   color: #165c7d;
   font-size: .75rem
+}
+
+.recomendation .recomendation-item .tags {
+  margin-bottom: 1rem
 }
 
 .recomendation .recomendation-item .product-title {
