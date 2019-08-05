@@ -2,6 +2,43 @@ document.addEventListener('DOMContentLoaded', slackEventNotification)
 document.addEventListener('DOMContentLoaded', resetStorage)
 document.addEventListener('DOMContentLoaded', logHit)
 document.addEventListener('DOMContentLoaded', outboundClicks)
+document.addEventListener('DOMContentLoaded', logFeaturesSelection)
+
+function logFeaturesSelection() {
+    function uuidv4() {
+      return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+      )
+    }
+    const uid = uuidv4()
+
+    let postData = {
+        session: uid,
+    }
+
+    function logIt(postData, nextValue) {
+      postData.click_next = nextValue
+      postData.features = (localStorage.getItem('selectedFeatures'))?localStorage.getItem('selectedFeatures').split(',').filter((el)=>el!==''):[]
+      postData.term = (localStorage.getItem('selectedTerm'))?localStorage.getItem('selectedTerm'):''
+      postData.size = (localStorage.getItem('selectedSegment'))?localStorage.getItem('selectedSegment'):''
+      postData.products = (localStorage.getItem('selectedProducts'))?localStorage.getItem('selectedProducts').split(',').filter((el)=>el!==''):[]
+      postData.addons = (localStorage.getItem('selectedAddons'))?localStorage.getItem('selectedAddons').split(',').filter((el)=>el!==''):[]
+
+      // send to google sheet
+      let urlParameters = Object.entries(postData).map(e => e.join('=')).join('&');
+      fetch(`https://script.google.com/macros/s/AKfycbzJ0JP50KuePpWvz2D9mh8TVaf521WgCGF2xmKectt0X-6IH52l/exec?${urlParameters}`).then(()=>{
+          return
+      })
+    }
+
+    const piles = document.querySelectorAll('.solution__options li');
+    Object.keys(piles).map((key)=>{
+        piles[key].addEventListener('click', logIt.bind(null, postData, '0'))
+    })
+    const recomendationButton = document.querySelector('.recomendation .recomendation__button')
+    recomendationButton.addEventListener('click', logIt.bind(null, postData, '1'))
+}
+
 
 function outboundClicks() {
     let outboundLinks = document.querySelectorAll('a')
