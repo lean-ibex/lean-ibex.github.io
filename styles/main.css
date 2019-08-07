@@ -470,7 +470,7 @@ img {
   border-radius: .5rem
 }
 
-#build-bundle .contact-me .contact, #build-bundle .contact-me input, #build-bundle .form-email, #build-bundle .form-email input, .button--round-full, .navigation .menu .recomendation a.recomendation__button, .navigation .menu a.button, .recomendation .navigation .menu a.recomendation__button, .recomendation .recomendation__button, .recomendation .secondary-cta .cta>.recomendation__button, .secondary-cta .cta>.button, .secondary-cta .recomendation .cta>.recomendation__button {
+#build-bundle .contact-me .contact, #build-bundle .contact-me input, #build-bundle .form-email, #build-bundle .form-email input, #sale-banner .no-button, #sale-banner .yes-button, .button--round-full, .navigation .menu .recomendation a.recomendation__button, .navigation .menu a.button, .recomendation .navigation .menu a.recomendation__button, .recomendation .recomendation__button, .recomendation .secondary-cta .cta>.recomendation__button, .secondary-cta .cta>.button, .secondary-cta .recomendation .cta>.recomendation__button {
   border-radius: 9999px
 }
 
@@ -1077,6 +1077,75 @@ img {
   color: #165c7d;
   width: 100%;
   display: inline-block
+}
+
+.banner-cta {
+  background-color: #165c7d;
+  color: #fff
+}
+
+.banner-cta .banner-cta {
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #165c7d
+}
+
+.banner-cta .banner-cta div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-top: 16px;
+  padding-bottom: 16px
+}
+
+.banner-cta .banner-cta span.highlight {
+  display: inline-block;
+  background-color: #92c80e;
+  padding: 4px 16px;
+  border-radius: 4px;
+  margin: 0 24px;
+  font-size: 12px;
+  font-weight: 400
+}
+
+.banner-cta .banner-cta a {
+  text-decoration: underline;
+  color: #44b6f1
+}
+
+.banner-cta .banner-cta p {
+  margin: 0;
+  text-align: center
+}
+
+@media only screen and (min-width:641px) {
+  .banner-cta .banner-cta div {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row
+  }
+
+  .banner-cta .banner-cta a {
+    margin-left: 1rem
+  }
+}
+
+.banner-cta .container, .banner-cta .description, .banner-cta .footer__menu, .banner-cta .footer__socmed, .banner-cta .recomendation .recomendation-solution, .recomendation .banner-cta .recomendation-solution {
+  padding-top: 20px
 }
 
 .usecase {
@@ -2709,6 +2778,98 @@ img {
   animation-fill-mode: both;
   -webkit-animation-timing-function: ease-in;
   animation-timing-function: ease-in
+}
+
+#sale-banner .modal__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end
+}
+
+#sale-banner .modal__content {
+  margin-top: 0;
+  text-align: center;
+  color: #75787b
+}
+
+#sale-banner .modal__content h4 {
+  margin-bottom: 1rem;
+  color: #2a2927
+}
+
+#sale-banner .modal__footer {
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  font-size: 1.25rem;
+  margin: 1rem;
+  position: relative
+}
+
+#sale-banner .modal__footer div {
+  display: none
+}
+
+#sale-banner .modal__close, #sale-banner .modal__footer div.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+}
+
+#sale-banner .modal__close {
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end
+}
+
+#sale-banner .yes-button {
+  padding-left: 60px;
+  padding-right: 60px;
+  text-decoration: none
+}
+
+#sale-banner .yes-button:hover {
+  background-color: #76a624
+}
+
+#sale-banner .no-button {
+  color: #75787b;
+  background-color: #fff;
+  text-decoration: none;
+  font-size: 14px
+}
+
+#sale-banner .no-button:hover {
+  color: #4badd2
 }
 
 .inbundle__content {

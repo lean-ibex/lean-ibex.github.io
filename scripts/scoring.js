@@ -392,14 +392,14 @@ const knownAddons = {
     },
     'GoToMeeting': {
         name: 'GoToMeeting',
-        description: 'Hold online meetings with up to 250 participants. With GoToMeeting, share screens and collaborate with HD video conferencing.',
-        startingAt: '$18.00',
+        description: 'Hold online meetings with up to 150 participants. With GoToMeeting, share screens and collaborate with HD video conferencing.',
+        startingAt: '$29.00',
         period: 'Per Month',
-        priceDetails: 'Starter Package. 10 Participants',
+        priceDetails: 'Pro Package. 150 Participants',
         url: 'https://www.gotomeeting.com/?c_name=lmi&c_prod=g2m&c_cmp=products',
         logo: 'https://logmeincdn.azureedge.net/sc-gotomedia/-/media/d72ccd0387fe45048ef32d83320e5008.svg',
-        monthlyStartsPrice: 18,
-        annualStartsPrice: 168,
+        monthlyStartsPrice: 29,
+        annualStartsPrice: 348,
         tags: ['Meetings']
     },
     'RescueAssist Service Desk': {
