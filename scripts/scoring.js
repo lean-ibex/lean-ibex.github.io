@@ -297,7 +297,7 @@ const knownAddons = {
     'Central Insight': {
         name: 'Central Insight',
         description: 'Central Insight includes asset management, dashboards, reporting, alerting & monitoring',
-        startingAt: '$47.00',
+        startingAt: '$45.00',
         period: 'Per Month',
         priceDetails: '',
         url: 'https://www.logmein.com/central?utm_source=lmiinc&utm_content=products',
