@@ -470,7 +470,7 @@ img {
   border-radius: .5rem
 }
 
-#build-bundle .contact-me .contact, #build-bundle .contact-me input, #build-bundle .form-email, #build-bundle .form-email input, #sale-banner .no-button, #sale-banner .yes-button, .button--round-full, .navigation .menu .recomendation a.recomendation__button, .navigation .menu a.button, .recomendation .navigation .menu a.recomendation__button, .recomendation .recomendation__button, .recomendation .secondary-cta .cta>.recomendation__button, .secondary-cta .cta>.button, .secondary-cta .recomendation .cta>.recomendation__button {
+#build-bundle .contact-me .contact, #build-bundle .contact-me input, #build-bundle .form-email, #build-bundle .form-email input, #new-feature-banner .no-button, #new-feature-banner .yes-button, #sale-banner .no-button, #sale-banner .yes-button, .button--round-full, .navigation .menu .recomendation a.recomendation__button, .navigation .menu a.button, .recomendation .navigation .menu a.recomendation__button, .recomendation .recomendation__button, .recomendation .secondary-cta .cta>.recomendation__button, .secondary-cta .cta>.button, .secondary-cta .recomendation .cta>.recomendation__button {
   border-radius: 9999px
 }
 
@@ -2869,6 +2869,181 @@ img {
 }
 
 #sale-banner .no-button:hover {
+  color: #4badd2
+}
+
+#build-bundle .contact-me #new-feature-banner .contact, #new-feature-banner #build-bundle .contact-me .contact, #new-feature-banner .button, #new-feature-banner .recomendation .recomendation__button, .recomendation #new-feature-banner .recomendation__button {
+  display: block;
+  padding: .6rem .8rem;
+  background-color: #93cc0b;
+  margin: .25rem 0;
+  color: #fff;
+  text-align: center
+}
+
+#new-feature-banner .modal__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end
+}
+
+#new-feature-banner .modal__content {
+  margin-top: 0;
+  text-align: center;
+  color: #75787b;
+  font-size: 14px
+}
+
+#new-feature-banner .modal__content h4 {
+  font-size: 14px;
+  color: #4badd2;
+  margin: 0 0 1rem
+}
+
+#new-feature-banner .modal__content h1 {
+  font-size: 24px;
+  color: #53565a;
+  margin: 0 0 1rem
+}
+
+#new-feature-banner .modal__content h2 {
+  font-size: 20px;
+  color: #75787b;
+  margin: 0 0 1rem
+}
+
+#new-feature-banner .modal__content ul {
+  list-style: none;
+  padding: 0 25px;
+  font-size: 14px;
+  color: #75787b;
+  margin: 0 0 1rem
+}
+
+#new-feature-banner .modal__content ul li:before {
+  content: "";
+  background-image: url(../images/revised-assets/check.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 10px;
+  display: inline-block
+}
+
+#new-feature-banner .modal__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 0;
+  min-height: 100px
+}
+
+#new-feature-banner .modal__footer, #new-feature-banner .modal__footer .respond-buttons {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column
+}
+
+#new-feature-banner .modal__footer .respond-buttons {
+  z-index: 1;
+  background-color: #fff
+}
+
+#new-feature-banner .modal__footer .form-email {
+  z-index: 2;
+  background-color: #fff;
+  width: 400px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 0 .25rem 0 0;
+  border: 2px solid #c8c7c6;
+  -webkit-transition: max-width .2s ease-in;
+  transition: max-width .2s ease-in;
+  -webkit-transition-delay: .1s;
+  transition-delay: .1s;
+  opacity: 1
+}
+
+#new-feature-banner .modal__footer .form-email input {
+  border-radius: 9999px;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  width: 100%;
+  padding: 0 1rem;
+  background-color: transparent
+}
+
+#new-feature-banner .modal__footer .form-email input:focus {
+  background-color: transparent
+}
+
+#new-feature-banner .modal__footer div {
+  display: none;
+  position: absolute
+}
+
+#new-feature-banner .modal__close, #new-feature-banner .modal__footer div.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+}
+
+#new-feature-banner .modal__close {
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end
+}
+
+#new-feature-banner .yes-button {
+  padding-left: 60px;
+  padding-right: 60px;
+  text-decoration: none
+}
+
+#new-feature-banner .yes-button:hover {
+  background-color: #76a624
+}
+
+#new-feature-banner .no-button {
+  color: #75787b;
+  background-color: #fff;
+  text-decoration: none;
+  font-size: 14px
+}
+
+#new-feature-banner .no-button:hover {
   color: #4badd2
 }
 
