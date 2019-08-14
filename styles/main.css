@@ -470,7 +470,7 @@ img {
   border-radius: .5rem
 }
 
-#build-bundle .contact-me .contact, #build-bundle .contact-me input, #build-bundle .form-email, #build-bundle .form-email input, #new-feature-banner .no-button, #new-feature-banner .yes-button, #sale-banner .no-button, #sale-banner .yes-button, .button--round-full, .navigation .menu .recomendation a.recomendation__button, .navigation .menu a.button, .recomendation .navigation .menu a.recomendation__button, .recomendation .recomendation__button, .recomendation .secondary-cta .cta>.recomendation__button, .secondary-cta .cta>.button, .secondary-cta .recomendation .cta>.recomendation__button {
+#build-bundle .contact-me .contact, #build-bundle .contact-me input, #build-bundle .form-email, #build-bundle .form-email input, #sale-banner .no-button, #sale-banner .yes-button, .button--round-full, .navigation .menu .recomendation a.recomendation__button, .navigation .menu a.button, .recomendation .navigation .menu a.recomendation__button, .recomendation .recomendation__button, .recomendation .secondary-cta .cta>.recomendation__button, .secondary-cta .cta>.button, .secondary-cta .recomendation .cta>.recomendation__button {
   border-radius: 9999px
 }
 
@@ -3027,6 +3027,7 @@ img {
 }
 
 #new-feature-banner .yes-button {
+  border-radius: 9999px;
   padding-left: 60px;
   padding-right: 60px;
   text-decoration: none
@@ -3037,6 +3038,7 @@ img {
 }
 
 #new-feature-banner .no-button {
+  border-radius: 9999px;
   color: #75787b;
   background-color: #fff;
   text-decoration: none;
