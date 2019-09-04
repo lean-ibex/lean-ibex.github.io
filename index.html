@@ -348,34 +348,12 @@
     </div>
   </section>
   <section class="modal-container">
-    <div class="modal micromodal-slide is-open" id="new-feature-banner" aria-hidden="true">
+    <div class="modal micromodal-slide" id="sale-banner" aria-hidden="true">
       <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="new-feature-title">
-          <header class="modal__header"><button class="modal__close" aria-label="Close modal" data-micromodal-close onclick='document.querySelector("#new-feature-banner").classList.remove("is-open")'></button></header>
-          <main class="modal__content" id="new-feature-content">
-            <h4>Coming Soon to RescueAssist</h4>
-            <h1>Endpoint Monitoring, Management,<br>& Deployment Automation</h1>
-            <ul>
-              <li>Monitor and manage endpoint infrastructure</li>
-              <li>Group computers by region, department, or control permissions</li>
-              <li>Automate software deployments across the entire company</li>
-            </ul>
-          </main>
-          <footer class="modal__footer">
-            <div class="respond-buttons show"><a href="javascript:void(0)" class="button yes-button new-feature-modal" onclick="((data)=>{document.querySelector('#new-feature-banner div.form-email').classList.add('show');fetch('https://us-central1-bundleit-02210.cloudfunctions.net/api/logHit').then((res)=>{return res.json()}).then((data)=>{return JSON.parse(data.result)['x-appengine-user-ip']}).then((ip)=>{data.ip=ip
-                let prm=Object.entries(data).map(e=>e.join('=')).join('&')
-                fetch(`https://script.google.com/macros/s/AKfycbzKeoBizBCQMBtE6I8_VuPU4Cj_xB-yewhWsRfkxaHW-tdfWt8/exec?${prm}`).then(()=>{return})
-                return})})({variant:'1',click:'yes',data:''})">Learn
-                More</a> <a href="javascript:void(0)" class="button no-button new-feature-modal" onclick="((data)=>{document.querySelector('#new-feature-banner').classList.remove('is-open');fetch('https://us-central1-bundleit-02210.cloudfunctions.net/api/logHit').then((res)=>{return res.json()}).then((data)=>{return JSON.parse(data.result)['x-appengine-user-ip']}).then((ip)=>{data.ip=ip
-                let prm=Object.entries(data).map(e=>e.join('=')).join('&')
-                fetch(`https://script.google.com/macros/s/AKfycbzKeoBizBCQMBtE6I8_VuPU4Cj_xB-yewhWsRfkxaHW-tdfWt8/exec?${prm}`).then(()=>{return})
-                return})})({variant:'1',click:'no',data:''})">No,
-                Thanks</a></div>
-            <div class="form-email"><input type="text" name="email" placeholder="Your email"> <a href="javascript:void(0)" class="button button--round-full send-button" onclick="((data)=>{document.querySelector('#new-feature-banner').classList.remove('is-open');fetch('https://us-central1-bundleit-02210.cloudfunctions.net/api/logHit').then((res)=>{return res.json()}).then((data)=>{return JSON.parse(data.result)['x-appengine-user-ip']}).then((ip)=>{data.ip=ip
-                let prm=Object.entries(data).map(e=>e.join('=')).join('&')
-                fetch(`https://script.google.com/macros/s/AKfycbzKeoBizBCQMBtE6I8_VuPU4Cj_xB-yewhWsRfkxaHW-tdfWt8/exec?${prm}`).then(()=>{return})
-                return})})({variant:'1',click:'send',data:document.querySelector('#new-feature-banner .form-email input').value})">Send</a></div>
-          </footer>
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="build-bundle-title">
+          <header class="modal__header"><button class="modal__close" aria-label="Close modal" data-micromodal-close></button></header>
+          <main class="modal__content" id="sale-banner-content"><img srcset="images/assets/banners/discount-popup-image.png, images/assets/banners/discount-popup-image@2x.png 2x, images/assets/banners/discount-popup-image@3x.png 3x"></main>
+          <footer class="modal__footer"><a href="javascript:void(0)" class="button yes-button sale-banner-modal">See Bundles</a> <a href="javascript:void(0)" class="button no-button sale-banner-modal">No, Thanks</a></footer>
         </div>
       </div>
     </div>
