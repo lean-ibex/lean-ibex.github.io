@@ -1,0 +1,205 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f5f8ff;
+}
+
+
+.btnup{
+    border-radius: 60px;
+    width: 100px;
+}
+
+.buttonback {
+    border-radius: 50px;
+    width: 100px;
+    padding: 2px;
+    font-size: 15px;
+    background-color: #6a88e6;
+    font-weight: 600;
+}
+
+.content p{
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.content h1{
+    font-weight: bold;
+    font-family: 'Eczar', serif;
+    color: #4b5265;
+    font-size: 47px;
+    letter-spacing: 2px;
+}
+
+.mid {
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.pilihan img{
+    margin-top: 50px;
+}
+
+.pilihan p{
+    color: #adbac4;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+}
+
+.bgtextbtn1 {
+    
+}
+
+.textbtn1 {
+    font-size: 17px;
+    font-weight: 600;
+    padding: 15px 15px;
+    line-height: 2;
+    font-family: 'Anton', sans-serif;
+    border-radius: 9px;
+    width: 280px;
+    color: #4b5265;
+  }
+
+    .textbtn2 {
+    font-size: 17px;
+    font-weight: 600;
+    padding: 15px 15px;
+    line-height: 2;
+    font-family: 'Anton', sans-serif;
+    border-radius: 9px;
+    width: 280px;
+    color: #4b5265;
+    }  
+
+.lead {
+    color: #6a88e6;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.login {
+    flex-wrap: wrap;
+    display: flex;
+}
+
+ @media (max-width: 500px) {
+    .buttonback {
+        border-radius: 50px;
+        width: 80px;
+        padding: 2px;
+        font-size: 13px;
+        background-color: #6a88e6;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    
+    .content h1{
+        font-weight: bold;
+        font-family: 'Eczar', serif;
+        color: #4b5265;
+        font-size: 37px;
+    }
+    
+    .pilihan img{
+        margin-top: 40px;
+    }
+    
+    .pilihan p{
+        color: #adbac4;
+        font-family: 'Lato', sans-serif;
+        font-size: 17px;
+    }
+    
+    
+    .textbtn1 {
+        font-size: 13px;
+        font-weight: 600;
+        padding: 15px 15px;
+        line-height: 2;
+        font-family: 'Anton', sans-serif;
+        border-radius: 9px;
+        width: 220px;
+        color: #4b5265;
+        margin-bottom: 20px;
+      }
+    
+    .textbtn2 {
+        font-size: 13px;
+        font-weight: 600;
+        padding: 15px 15px;
+        line-height: 2;
+        font-family: 'Anton', sans-serif;
+        border-radius: 9px;
+        width: 220px;
+        color: #4b5265;
+    }  
+    
+    .lead {
+        color: #6a88e6;
+        font-weight: 800;
+        font-size: 17px;
+    }
+    
+ }
+
+ @media (min-width: 501px) and (max-width: 767px) {
+    .buttonback {
+        border-radius: 50px;
+        width: 80px;
+        padding: 2px;
+        font-size: 13px;
+        background-color: #6a88e6;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    
+    .content h1{
+        font-weight: bold;
+        font-family: 'Eczar', serif;
+        color: #4b5265;
+        font-size: 45px;
+    }
+    
+    .pilihan img{
+        margin-top: 40px;
+    }
+    
+    .pilihan p{
+        color: #adbac4;
+        font-family: 'Lato', sans-serif;
+        font-size: 18px;
+    }
+    
+    
+    .textbtn1 {
+        font-size: 13px;
+        font-weight: 600;
+        padding: 15px 15px;
+        line-height: 2;
+        font-family: 'Anton', sans-serif;
+        border-radius: 9px;
+        width: 220px;
+        color: #4b5265;
+        margin-bottom: 20px;
+      }
+    
+    .textbtn2 {
+        font-size: 13px;
+        font-weight: 600;
+        padding: 15px 15px;
+        line-height: 2;
+        font-family: 'Anton', sans-serif;
+        border-radius: 9px;
+        width: 220px;
+        color: #4b5265;
+    }  
+    
+    .lead {
+        color: #6a88e6;
+        font-weight: 800;
+        font-size: 17px;
+    }
+    
+ }
